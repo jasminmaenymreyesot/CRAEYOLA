@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CROYOLA | Projects</title>
+
+    <link rel="stylesheet" href="project.css">
+
+</head>
+
+<body>
+
+    <!-- =========================================
+         SIDEBAR
+         ========================================= -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-brand">
+            <img src="creoyola.png">
+        </div>
+
+        <div class="role-label">
+            PROJECT MANAGER
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a
+                href="admin-dashboard.html"
+                class="nav-item"
+            >
+                <span>▣</span>
+                Dashboard
+            </a>
+
+            <a
+                href="project.html"
+                class="nav-item active"
+            >
+                <span>▦</span>
+                Projects
+            </a>
+
+            <a
+                href="tasks.html"
+                class="nav-item"
+            >
+                <span>✓</span>
+                Tasks
+            </a>
+
+            <a
+                href="assets.html"
+                class="nav-item"
+            >
+                <span>◆</span>
+                Assets
+            </a>
+
+            <a
+                href="version.html"
+                class="nav-item"
+            >
+                <span>↻</span>
+                Versions
+            </a>
+
+            <a
+                href="reviews.html"
+                class="nav-item"
+            >
+                <span>◉</span>
+                Reviews
+            </a>
+
+            <a
+                href="forms.html"
+                class="nav-item"
+            >
+                <span>□</span>
+                Forms
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <button
+                id="logoutButton"
+                class="logout-button"
+            >
+                ↪ Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================================
+         MAIN CONTENT
+         ========================================= -->
+
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <div>
+
+                <p class="page-label">
+                    PROJECT MANAGEMENT
+                </p>
+
+                <h1>
+                    Projects
+                </h1>
+
+            </div>
+
+
+            <div class="profile">
+
+                <div class="profile-avatar">
+                    PM
+                </div>
+
+                <div>
+
+                    <strong id="adminName">
+                        Project Manager
+                    </strong>
+
+                    <small>
+                        Administrator
+                    </small>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================================
+             PAGE HEADER
+             ========================================= -->
+
+        <section class="page-header">
+
+            <div>
+
+                <h2>
+                    Project Management
+                </h2>
+
+                <p>
+                    Create, monitor, and manage multimedia production projects.
+                </p>
+
+            </div>
+
+            <button
+                id="openProjectModal"
+                class="primary-button"
+            >
+                + New Project
+            </button>
+
+        </section>
+
+
+        <!-- =========================================
+             SEARCH / FILTER
+             ========================================= -->
+
+        <section class="toolbar">
+
+            <div class="search-box">
+
+                <span>⌕</span>
+
+                <input
+                    type="text"
+                    id="searchProject"
+                    placeholder="Search projects..."
+                >
+
+            </div>
+
+
+            <select id="statusFilter">
+
+                <option value="all">
+                    All Status
+                </option>
+
+                <option value="Planning">
+                    Planning
+                </option>
+
+                <option value="Pre-Production">
+                    Pre-Production
+                </option>
+
+                <option value="In Production">
+                    In Production
+                </option>
+
+                <option value="Review">
+                    Review
+                </option>
+
+                <option value="Completed">
+                    Completed
+                </option>
+
+            </select>
+
+        </section>
+
+
+        <!-- =========================================
+             PROJECT TABLE
+             ========================================= -->
+
+        <section class="panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <h2>
+                        All Projects
+                    </h2>
+
+                    <p>
+                        Manage your current production projects
+                    </p>
+
+                </div>
+
+                <span
+                    id="projectTotal"
+                    class="project-total"
+                >
+                    0 Projects
+                </span>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Project
+                            </th>
+
+                            <th>
+                                Client
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Progress
+                            </th>
+
+                            <th>
+                                Created
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="projectTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         NEW PROJECT MODAL
+         ========================================= -->
+
+    <div
+        id="projectModal"
+        class="modal"
+    >
+
+        <div class="modal-card">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <h2>
+                        Create New Project
+                    </h2>
+
+                    <p>
+                        Add a new multimedia production project.
+                    </p>
+
+                </div>
+
+                <button
+                    id="closeProjectModal"
+                    class="close-button"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <form id="projectForm">
+
+                <div class="form-group">
+
+                    <label for="projectName">
+                        Project Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="projectName"
+                        placeholder="e.g. Hide and Seek"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="clientName">
+                        Client
+                    </label>
+
+                    <input
+                        type="text"
+                        id="clientName"
+                        placeholder="Enter client name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="projectStatus">
+                            Status
+                        </label>
+
+                        <select
+                            id="projectStatus"
+                            required
+                        >
+
+                            <option value="Planning">
+                                Planning
+                            </option>
+
+                            <option value="Pre-Production">
+                                Pre-Production
+                            </option>
+
+                            <option value="In Production">
+                                In Production
+                            </option>
+
+                            <option value="Review">
+                                Review
+                            </option>
+
+                            <option value="Completed">
+                                Completed
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="projectProgress">
+                            Progress (%)
+                        </label>
+
+                        <input
+                            type="number"
+                            id="projectProgress"
+                            min="0"
+                            max="100"
+                            value="0"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="projectDescription">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="projectDescription"
+                        rows="4"
+                        placeholder="Describe the project..."
+                    ></textarea>
+
+                </div>
+
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        id="cancelProject"
+                        class="secondary-button"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="primary-button"
+                    >
+                        Create Project
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         PROJECT DETAILS MODAL
+         ========================================= -->
+
+    <div
+        id="detailsModal"
+        class="modal"
+    >
+
+        <div class="modal-card">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <h2 id="detailsTitle">
+                        Project Details
+                    </h2>
+
+                    <p id="detailsClient">
+                    </p>
+
+                </div>
+
+                <button
+                    id="closeDetailsModal"
+                    class="close-button"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <div class="details-content">
+
+                <div class="detail-row">
+
+                    <span>
+                        Status
+                    </span>
+
+                    <strong id="detailsStatus">
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-row">
+
+                    <span>
+                        Progress
+                    </span>
+
+                    <strong id="detailsProgress">
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-row">
+
+                    <span>
+                        Created
+                    </span>
+
+                    <strong id="detailsCreated">
+                    </strong>
+
+                </div>
+
+
+                <div class="description-box">
+
+                    <span>
+                        Description
+                    </span>
+
+                    <p id="detailsDescription">
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="project.js"></script>
+
+</body>
+
+</html>

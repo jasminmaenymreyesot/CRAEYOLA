@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CROYOLA | Forms</title>
+
+    <link rel="stylesheet" href="user-forms.css">
+
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- ======================================
+         SIDEBAR
+    ======================================= -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-brand">
+            <img src="creoyola.png" alt="CROYOLA">
+        </div>
+
+        <p class="menu-title">WORKSPACE</p>
+
+        <nav>
+
+            <a href="user-dashboard.html">
+                <span>▣</span>
+                Dashboard
+            </a>
+
+            <a href="user-projects.html">
+                <span>📁</span>
+                My Projects
+            </a>
+
+            <a href="user-tasks.html">
+                <span>✓</span>
+                My Tasks
+            </a>
+
+            <a href="user-assets.html">
+                <span>🎨</span>
+                My Assets
+            </a>
+
+            <a href="user-versions.html">
+                <span>🔄</span>
+                Versions
+            </a>
+
+            <a href="user-reviews.html">
+                <span>💬</span>
+                Reviews
+            </a>
+
+            <a href="user-forms.html" class="active">
+                <span>📄</span>
+                Forms
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <button
+                id="logoutBtn"
+                class="logout">
+                ↪ Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ======================================
+         MAIN
+    ======================================= -->
+
+    <main class="main">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h2>Forms</h2>
+
+                <p>
+                    Complete and submit project-related forms.
+                </p>
+
+            </div>
+
+
+            <div class="profile">
+
+                <div>
+
+                    <strong id="userName">
+                        User
+                    </strong>
+
+                    <small id="userRole">
+                        Creative User
+                    </small>
+
+                </div>
+
+                <div
+                    class="avatar"
+                    id="userAvatar">
+                    U
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- CONTENT -->
+
+        <section class="content">
+
+
+            <!-- PAGE HEADER -->
+
+            <div class="page-header">
+
+                <div>
+
+                    <span class="page-label">
+                        PROJECT DOCUMENTATION
+                    </span>
+
+                    <h1>
+                        Forms
+                    </h1>
+
+                    <p>
+                        Access and complete forms required
+                        for your multimedia projects.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FORM CARDS -->
+
+            <div class="section-title">
+
+                <h2>
+                    Available Forms
+                </h2>
+
+                <p>
+                    Select a form to begin.
+                </p>
+
+            </div>
+
+
+            <div class="forms-grid">
+
+
+                <!-- PROJECT REQUEST -->
+
+                <div class="form-card">
+
+                    <div class="form-icon">
+                        +
+                    </div>
+
+                    <h3>
+                        Project Request
+                    </h3>
+
+                    <p>
+                        Submit a request for a new multimedia
+                        project.
+                    </p>
+
+                    <button
+                        class="form-btn"
+                        data-form="project">
+                        Open Form →
+                    </button>
+
+                </div>
+
+
+                <!-- TASK REQUEST -->
+
+                <div class="form-card">
+
+                    <div class="form-icon">
+                        ✓
+                    </div>
+
+                    <h3>
+                        Task Request
+                    </h3>
+
+                    <p>
+                        Request a new task or provide task
+                        information.
+                    </p>
+
+                    <button
+                        class="form-btn"
+                        data-form="task">
+                        Open Form →
+                    </button>
+
+                </div>
+
+
+                <!-- REVISION REQUEST -->
+
+                <div class="form-card">
+
+                    <div class="form-icon">
+                        R
+                    </div>
+
+                    <h3>
+                        Revision Request
+                    </h3>
+
+                    <p>
+                        Submit changes or revision requirements
+                        for a project.
+                    </p>
+
+                    <button
+                        class="form-btn"
+                        data-form="revision">
+                        Open Form →
+                    </button>
+
+                </div>
+
+
+                <!-- FEEDBACK -->
+
+                <div class="form-card">
+
+                    <div class="form-icon">
+                        F
+                    </div>
+
+                    <h3>
+                        Feedback Form
+                    </h3>
+
+                    <p>
+                        Send feedback, suggestions, or concerns
+                        to the project manager.
+                    </p>
+
+                    <button
+                        class="form-btn"
+                        data-form="feedback">
+                        Open Form →
+                    </button>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- SUBMITTED FORMS -->
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h3>
+                            My Submitted Forms
+                        </h3>
+
+                        <p>
+                            Track forms you have submitted.
+                        </p>
+
+                    </div>
+
+                    <button
+                        class="small-btn"
+                        id="clearFormsBtn">
+                        Clear History
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="submittedForms"
+                    class="submitted-list">
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ======================================
+     FORM MODAL
+======================================= -->
+
+<div
+    class="modal"
+    id="formModal">
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2 id="modalTitle">
+                    Form
+                </h2>
+
+                <p id="modalDescription">
+                    Complete the form below.
+                </p>
+
+            </div>
+
+            <button
+                class="close-btn"
+                id="closeModalBtn">
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="dynamicForm">
+
+            <div class="form-group">
+
+                <label>
+                    Project
+                </label>
+
+                <select
+                    id="formProject"
+                    required>
+
+                    <option value="">
+                        Select project
+                    </option>
+
+                    <option value="CROYOLA Website">
+                        CROYOLA Website
+                    </option>
+
+                    <option value="Brand Identity">
+                        Brand Identity
+                    </option>
+
+                    <option value="Multimedia Campaign">
+                        Multimedia Campaign
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label id="subjectLabel">
+                    Subject
+                </label>
+
+                <input
+                    type="text"
+                    id="formSubject"
+                    placeholder="Enter subject"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Details
+                </label>
+
+                <textarea
+                    id="formDetails"
+                    rows="5"
+                    placeholder="Enter details..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="cancel-btn"
+                    id="cancelBtn">
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-btn">
+                    Submit Form
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="user-forms.js"></script>
+
+</body>
+</html>

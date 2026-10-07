@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CROYOLA | Tasks</title>
+
+    <link rel="stylesheet" href="tasks.css">
+
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-brand">
+            <img src="creoyola.png">
+        </div>
+
+        <div class="role-label">
+            PROJECT MANAGER
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a
+                href="admin-dashboard.html"
+                class="nav-item"
+            >
+                <span>▣</span>
+                Dashboard
+            </a>
+
+            <a
+                href="project.html"
+                class="nav-item"
+            >
+                <span>▦</span>
+                Projects
+            </a>
+
+            <a
+                href="tasks.html"
+                class="nav-item active"
+            >
+                <span>✓</span>
+                Tasks
+            </a>
+
+            <a
+                href="assets.html"
+                class="nav-item"
+            >
+                <span>◆</span>
+                Assets
+            </a>
+
+            <a
+                href="versions.html"
+                class="nav-item"
+            >
+                <span>↻</span>
+                Versions
+            </a>
+
+            <a
+                href="reviews.html"
+                class="nav-item"
+            >
+                <span>◉</span>
+                Reviews
+            </a>
+
+            <a
+                href="forms.html"
+                class="nav-item"
+            >
+                <span>□</span>
+                Forms
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <button
+                id="logoutButton"
+                class="logout-button"
+            >
+                ↪ Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+
+                <p class="page-label">
+                    PRODUCTION MANAGEMENT
+                </p>
+
+                <h1>
+                    Tasks
+                </h1>
+
+            </div>
+
+
+            <div class="profile">
+
+                <div class="profile-avatar">
+                    PM
+                </div>
+
+                <div>
+
+                    <strong id="adminName">
+                        Project Manager
+                    </strong>
+
+                    <small>
+                        Administrator
+                    </small>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- PAGE HEADER -->
+
+        <section class="page-header">
+
+            <div>
+
+                <h2>
+                    Task Management
+                </h2>
+
+                <p>
+                    Assign and monitor production tasks.
+                </p>
+
+            </div>
+
+            <button
+                id="openTaskModal"
+                class="primary-button"
+            >
+                + New Task
+            </button>
+
+        </section>
+
+
+        <!-- TOOLBAR -->
+
+        <section class="toolbar">
+
+            <div class="search-box">
+
+                <span>⌕</span>
+
+                <input
+                    type="text"
+                    id="searchTask"
+                    placeholder="Search tasks..."
+                >
+
+            </div>
+
+
+            <select id="taskStatusFilter">
+
+                <option value="all">
+                    All Status
+                </option>
+
+                <option value="To Do">
+                    To Do
+                </option>
+
+                <option value="In Progress">
+                    In Progress
+                </option>
+
+                <option value="Review">
+                    Review
+                </option>
+
+                <option value="Done">
+                    Done
+                </option>
+
+            </select>
+
+
+            <select id="assigneeFilter">
+
+                <option value="all">
+                    All Assignees
+                </option>
+
+                <option value="Client">
+                    Client
+                </option>
+
+                <option value="Artist">
+                    Artist
+                </option>
+
+                <option value="Scriptwriter">
+                    Scriptwriter
+                </option>
+
+                <option value="Animator">
+                    Animator
+                </option>
+
+            </select>
+
+        </section>
+
+
+        <!-- TASK TABLE -->
+
+        <section class="panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <h2>
+                        Production Tasks
+                    </h2>
+
+                    <p>
+                        Tasks assigned to project members
+                    </p>
+
+                </div>
+
+                <span
+                    id="taskTotal"
+                    class="task-total"
+                >
+                    0 Tasks
+                </span>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Task
+                            </th>
+
+                            <th>
+                                Project
+                            </th>
+
+                            <th>
+                                Assigned To
+                            </th>
+
+                            <th>
+                                Priority
+                            </th>
+
+                            <th>
+                                Due Date
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="taskTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         TASK MODAL
+         ========================================= -->
+
+    <div
+        id="taskModal"
+        class="modal"
+    >
+
+        <div class="modal-card">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <h2>
+                        Create New Task
+                    </h2>
+
+                    <p>
+                        Assign work to a production team member.
+                    </p>
+
+                </div>
+
+                <button
+                    id="closeTaskModal"
+                    class="close-button"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <form id="taskForm">
+
+                <div class="form-group">
+
+                    <label for="taskName">
+                        Task Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="taskName"
+                        placeholder="e.g. Finalize storyboard"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="taskProject">
+                        Project
+                    </label>
+
+                    <select
+                        id="taskProject"
+                        required
+                    >
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="taskAssignee">
+                            Assign To
+                        </label>
+
+                        <select
+                            id="taskAssignee"
+                            required
+                        >
+
+                            <option value="Client">
+                                Client
+                            </option>
+
+                            <option value="Artist">
+                                Artist
+                            </option>
+
+                            <option value="Scriptwriter">
+                                Scriptwriter
+                            </option>
+
+                            <option value="Animator">
+                                Animator
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="taskPriority">
+                            Priority
+                        </label>
+
+                        <select
+                            id="taskPriority"
+                            required
+                        >
+
+                            <option value="Low">
+                                Low
+                            </option>
+
+                            <option value="Medium" selected>
+                                Medium
+                            </option>
+
+                            <option value="High">
+                                High
+                            </option>
+
+                            <option value="Urgent">
+                                Urgent
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="taskDueDate">
+                            Due Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="taskDueDate"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="taskStatus">
+                            Status
+                        </label>
+
+                        <select
+                            id="taskStatus"
+                            required
+                        >
+
+                            <option value="To Do">
+                                To Do
+                            </option>
+
+                            <option value="In Progress">
+                                In Progress
+                            </option>
+
+                            <option value="Review">
+                                Review
+                            </option>
+
+                            <option value="Done">
+                                Done
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="taskDescription">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="taskDescription"
+                        rows="4"
+                        placeholder="Describe the task..."
+                    ></textarea>
+
+                </div>
+
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        id="cancelTask"
+                        class="secondary-button"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="primary-button"
+                    >
+                        Create Task
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="tasks.js"></script>
+
+</body>
+
+</html>

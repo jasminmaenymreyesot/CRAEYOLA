@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CROYOLA | My Assets</title>
+
+    <link rel="stylesheet" href="user-assets.css">
+
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-brand">
+            <img src="creoyola.png" alt="CROYOLA">
+        </div>
+
+        <p class="menu-title">WORKSPACE</p>
+
+        <nav>
+
+            <a href="user-dashboard.html">
+                <span>▣</span>
+                Dashboard
+            </a>
+
+            <a href="user-projects.html">
+                <span>📁</span>
+                My Projects
+            </a>
+
+            <a href="user-tasks.html">
+                <span>✓</span>
+                My Tasks
+            </a>
+
+            <a href="user-assets.html" class="active">
+                <span>🎨</span>
+                My Assets
+            </a>
+
+            <a href="user-versions.html">
+                <span>🔄</span>
+                Versions
+            </a>
+
+            <a href="user-reviews.html">
+                <span>💬</span>
+                Reviews
+            </a>
+
+            <a href="user-forms.html">
+                <span>📄</span>
+                Forms
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <button
+                id="logoutBtn"
+                class="logout">
+                ↪ Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h2>My Assets</h2>
+
+                <p>
+                    Manage your multimedia project files.
+                </p>
+
+            </div>
+
+            <div class="profile">
+
+                <div>
+
+                    <strong id="userName">
+                        User
+                    </strong>
+
+                    <small id="userRole">
+                        Creative Member
+                    </small>
+
+                </div>
+
+                <div
+                    class="avatar"
+                    id="userAvatar">
+                    U
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- CONTENT -->
+
+        <section class="content">
+
+            <!-- PAGE HEADER -->
+
+            <div class="page-header">
+
+                <div>
+
+                    <span class="page-label">
+                        ASSET WORKSPACE
+                    </span>
+
+                    <h1>
+                        My Assets
+                    </h1>
+
+                    <p>
+                        View, organize and manage the
+                        multimedia assets assigned to you.
+                    </p>
+
+                </div>
+
+                <button
+                    class="primary-btn"
+                    id="uploadBtn">
+                    + Upload Asset
+                </button>
+
+            </div>
+
+
+            <!-- STATS -->
+
+            <div class="stats">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🎨
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Assets
+                        </span>
+
+                        <strong>
+                            12
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🖼
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Images
+                        </span>
+
+                        <strong>
+                            6
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🎬
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Videos
+                        </span>
+
+                        <strong>
+                            3
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        📄
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Documents
+                        </span>
+
+                        <strong>
+                            3
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FILTER -->
+
+            <div class="filter-bar">
+
+                <button
+                    class="filter-btn active"
+                    data-type="all">
+                    All Assets
+                </button>
+
+                <button
+                    class="filter-btn"
+                    data-type="image">
+                    Images
+                </button>
+
+                <button
+                    class="filter-btn"
+                    data-type="video">
+                    Videos
+                </button>
+
+                <button
+                    class="filter-btn"
+                    data-type="document">
+                    Documents
+                </button>
+
+            </div>
+
+
+            <!-- ASSET GRID -->
+
+            <div
+                class="asset-grid"
+                id="assetGrid">
+
+                <!-- ASSET 1 -->
+
+                <article
+                    class="asset-card"
+                    data-type="image">
+
+                    <div class="asset-preview image-preview">
+                        🖼️
+                    </div>
+
+                    <div class="asset-body">
+
+                        <h3>
+                            character-sheet.png
+                        </h3>
+
+                        <p>
+                            Beyond the File
+                        </p>
+
+                        <div class="asset-meta">
+
+                            <span>PNG</span>
+
+                            <span>2.4 MB</span>
+
+                        </div>
+
+                        <div class="asset-actions">
+
+                            <button
+                                class="view-asset"
+                                data-name="character-sheet.png">
+                                View
+                            </button>
+
+                            <button
+                                class="download-asset"
+                                data-name="character-sheet.png">
+                                Download
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ASSET 2 -->
+
+                <article
+                    class="asset-card"
+                    data-type="video">
+
+                    <div class="asset-preview video-preview">
+                        🎬
+                    </div>
+
+                    <div class="asset-body">
+
+                        <h3>
+                            scene-preview.mp4
+                        </h3>
+
+                        <p>
+                            Beyond the File
+                        </p>
+
+                        <div class="asset-meta">
+
+                            <span>MP4</span>
+
+                            <span>18.7 MB</span>
+
+                        </div>
+
+                        <div class="asset-actions">
+
+                            <button
+                                class="view-asset"
+                                data-name="scene-preview.mp4">
+                                View
+                            </button>
+
+                            <button
+                                class="download-asset"
+                                data-name="scene-preview.mp4">
+                                Download
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ASSET 3 -->
+
+                <article
+                    class="asset-card"
+                    data-type="image">
+
+                    <div class="asset-preview image-preview">
+                        🎨
+                    </div>
+
+                    <div class="asset-body">
+
+                        <h3>
+                            poster-design.jpg
+                        </h3>
+
+                        <p>
+                            CROYOLA Promotional Video
+                        </p>
+
+                        <div class="asset-meta">
+
+                            <span>JPG</span>
+
+                            <span>4.1 MB</span>
+
+                        </div>
+
+                        <div class="asset-actions">
+
+                            <button
+                                class="view-asset"
+                                data-name="poster-design.jpg">
+                                View
+                            </button>
+
+                            <button
+                                class="download-asset"
+                                data-name="poster-design.jpg">
+                                Download
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ASSET 4 -->
+
+                <article
+                    class="asset-card"
+                    data-type="document">
+
+                    <div class="asset-preview document-preview">
+                        📄
+                    </div>
+
+                    <div class="asset-body">
+
+                        <h3>
+                            project-script.pdf
+                        </h3>
+
+                        <p>
+                            Beyond the File
+                        </p>
+
+                        <div class="asset-meta">
+
+                            <span>PDF</span>
+
+                            <span>1.8 MB</span>
+
+                        </div>
+
+                        <div class="asset-actions">
+
+                            <button
+                                class="view-asset"
+                                data-name="project-script.pdf">
+                                View
+                            </button>
+
+                            <button
+                                class="download-asset"
+                                data-name="project-script.pdf">
+                                Download
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ASSET 5 -->
+
+                <article
+                    class="asset-card"
+                    data-type="image">
+
+                    <div class="asset-preview image-preview">
+                        🖌️
+                    </div>
+
+                    <div class="asset-body">
+
+                        <h3>
+                            logo-concept.png
+                        </h3>
+
+                        <p>
+                            Brand Visual Assets
+                        </p>
+
+                        <div class="asset-meta">
+
+                            <span>PNG</span>
+
+                            <span>1.2 MB</span>
+
+                        </div>
+
+                        <div class="asset-actions">
+
+                            <button
+                                class="view-asset"
+                                data-name="logo-concept.png">
+                                View
+                            </button>
+
+                            <button
+                                class="download-asset"
+                                data-name="logo-concept.png">
+                                Download
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ASSET 6 -->
+
+                <article
+                    class="asset-card"
+                    data-type="document">
+
+                    <div class="asset-preview document-preview">
+                        📑
+                    </div>
+
+                    <div class="asset-body">
+
+                        <h3>
+                            production-notes.docx
+                        </h3>
+
+                        <p>
+                            CROYOLA Promotional Video
+                        </p>
+
+                        <div class="asset-meta">
+
+                            <span>DOCX</span>
+
+                            <span>850 KB</span>
+
+                        </div>
+
+                        <div class="asset-actions">
+
+                            <button
+                                class="view-asset"
+                                data-name="production-notes.docx">
+                                View
+                            </button>
+
+                            <button
+                                class="download-asset"
+                                data-name="production-notes.docx">
+                                Download
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ================= MODAL ================= -->
+
+<div
+    class="modal"
+    id="assetModal">
+
+    <div class="modal-box">
+
+        <button
+            class="close-btn"
+            id="closeModal">
+            ×
+        </button>
+
+        <div
+            class="large-preview"
+            id="largePreview">
+            🎨
+        </div>
+
+        <h2 id="modalAssetName">
+            Asset
+        </h2>
+
+        <p>
+            Asset preview and information.
+        </p>
+
+        <button
+            class="primary-btn"
+            id="modalDownload">
+            Download Asset
+        </button>
+
+    </div>
+
+</div>
+
+
+<script src="user-assets.js"></script>
+
+</body>
+</html>

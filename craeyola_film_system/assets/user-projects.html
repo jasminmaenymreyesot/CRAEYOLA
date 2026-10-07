@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CROYOLA | My Projects</title>
+
+    <link rel="stylesheet" href="user-projects.css">
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-brand">
+            <img src="creoyola.png" alt="CROYOLA">
+        </div>
+
+        <p class="menu-title">WORKSPACE</p>
+
+        <nav>
+
+            <a href="user-dashboard.html">
+                <span>▣</span>
+                Dashboard
+            </a>
+
+            <a href="user-projects.html" class="active">
+                <span>📁</span>
+                My Projects
+            </a>
+
+            <a href="user-tasks.html">
+                <span>✓</span>
+                My Tasks
+            </a>
+
+            <a href="user-assets.html">
+                <span>🎨</span>
+                My Assets
+            </a>
+
+            <a href="user-assets.html">
+                <span>🔄</span>
+                Versions
+            </a>
+
+            <a href="user-reviews.html">
+                <span>💬</span>
+                Reviews
+            </a>
+
+            <a href="user-forms.html">
+                <span>📄</span>
+                Forms
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <button id="logoutBtn" class="logout">
+                ↪ Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div>
+                <h2>My Projects</h2>
+                <p>View and manage your assigned multimedia projects.</p>
+            </div>
+
+            <div class="profile">
+
+                <div>
+                    <strong id="userName">User</strong>
+                    <small id="userRole">Creative Member</small>
+                </div>
+
+                <div class="avatar" id="userAvatar">
+                    U
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- CONTENT -->
+
+        <section class="content">
+
+            <!-- PAGE HEADER -->
+
+            <div class="page-header">
+
+                <div>
+                    <span class="page-label">PROJECT WORKSPACE</span>
+
+                    <h1>My Projects</h1>
+
+                    <p>
+                        Manage the projects assigned to you and monitor
+                        their current production status.
+                    </p>
+                </div>
+
+                <button class="primary-btn" id="newProjectBtn">
+                    + New Project
+                </button>
+
+            </div>
+
+
+            <!-- PROJECT STATS -->
+
+            <div class="stats">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">📁</div>
+
+                    <div>
+                        <span>Total Projects</span>
+                        <strong id="totalProjects">3</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">◔</div>
+
+                    <div>
+                        <span>In Progress</span>
+                        <strong id="progressProjects">2</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">✓</div>
+
+                    <div>
+                        <span>Completed</span>
+                        <strong id="completedProjects">1</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">!</div>
+
+                    <div>
+                        <span>Needs Review</span>
+                        <strong id="reviewProjects">1</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT LIST -->
+
+            <div class="section-title">
+
+                <h2>Project List</h2>
+
+                <p>
+                    Your current multimedia projects.
+                </p>
+
+            </div>
+
+
+            <div class="project-grid" id="projectGrid">
+
+
+                <!-- PROJECT 1 -->
+
+                <article class="project-card">
+
+                    <div class="project-top">
+
+                        <div class="project-icon">
+                            🎬
+                        </div>
+
+                        <span class="status status-progress">
+                            In Progress
+                        </span>
+
+                    </div>
+
+                    <h3>Beyond the File</h3>
+
+                    <p class="project-description">
+                        Multimedia animation project involving story,
+                        visual assets and production materials.
+                    </p>
+
+                    <div class="project-info">
+
+                        <div>
+                            <span>Project ID</span>
+                            <strong>CRY-001</strong>
+                        </div>
+
+                        <div>
+                            <span>Deadline</span>
+                            <strong>Oct 20, 2026</strong>
+                        </div>
+
+                    </div>
+
+                    <div class="progress-area">
+
+                        <div class="progress-label">
+                            <span>Progress</span>
+                            <strong>65%</strong>
+                        </div>
+
+                        <div class="progress-bar">
+                            <div style="width:65%"></div>
+                        </div>
+
+                    </div>
+
+                    <div class="card-actions">
+
+                        <button
+                            class="view-btn"
+                            data-project="Beyond the File">
+                            View Project
+                        </button>
+
+                        <button
+                            class="more-btn"
+                            data-project="Beyond the File">
+                            Details
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PROJECT 2 -->
+
+                <article class="project-card">
+
+                    <div class="project-top">
+
+                        <div class="project-icon">
+                            🎨
+                        </div>
+
+                        <span class="status status-progress">
+                            In Progress
+                        </span>
+
+                    </div>
+
+                    <h3>CROYOLA Promotional Video</h3>
+
+                    <p class="project-description">
+                        Promotional multimedia content for the CROYOLA
+                        creative production system.
+                    </p>
+
+                    <div class="project-info">
+
+                        <div>
+                            <span>Project ID</span>
+                            <strong>CRY-002</strong>
+                        </div>
+
+                        <div>
+                            <span>Deadline</span>
+                            <strong>Oct 25, 2026</strong>
+                        </div>
+
+                    </div>
+
+                    <div class="progress-area">
+
+                        <div class="progress-label">
+                            <span>Progress</span>
+                            <strong>40%</strong>
+                        </div>
+
+                        <div class="progress-bar">
+                            <div style="width:40%"></div>
+                        </div>
+
+                    </div>
+
+                    <div class="card-actions">
+
+                        <button
+                            class="view-btn"
+                            data-project="CROYOLA Promotional Video">
+                            View Project
+                        </button>
+
+                        <button
+                            class="more-btn"
+                            data-project="CROYOLA Promotional Video">
+                            Details
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PROJECT 3 -->
+
+                <article class="project-card">
+
+                    <div class="project-top">
+
+                        <div class="project-icon">
+                            🖼️
+                        </div>
+
+                        <span class="status status-done">
+                            Completed
+                        </span>
+
+                    </div>
+
+                    <h3>Brand Visual Assets</h3>
+
+                    <p class="project-description">
+                        Collection of visual materials prepared for
+                        multimedia branding requirements.
+                    </p>
+
+                    <div class="project-info">
+
+                        <div>
+                            <span>Project ID</span>
+                            <strong>CRY-003</strong>
+                        </div>
+
+                        <div>
+                            <span>Deadline</span>
+                            <strong>Oct 05, 2026</strong>
+                        </div>
+
+                    </div>
+
+                    <div class="progress-area">
+
+                        <div class="progress-label">
+                            <span>Progress</span>
+                            <strong>100%</strong>
+                        </div>
+
+                        <div class="progress-bar">
+                            <div style="width:100%"></div>
+                        </div>
+
+                    </div>
+
+                    <div class="card-actions">
+
+                        <button
+                            class="view-btn"
+                            data-project="Brand Visual Assets">
+                            View Project
+                        </button>
+
+                        <button
+                            class="more-btn"
+                            data-project="Brand Visual Assets">
+                            Details
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- RECENT ACTIVITY -->
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h3>Recent Project Activity</h3>
+                        <p>Latest updates from your projects.</p>
+                    </div>
+
+                    <button class="text-btn" id="refreshBtn">
+                        Refresh
+                    </button>
+
+                </div>
+
+                <div class="activity-list" id="activityList">
+
+                    <div class="activity-item">
+
+                        <span class="activity-dot"></span>
+
+                        <div>
+                            <strong>New project version uploaded</strong>
+                            <p>Beyond the File</p>
+                            <small>10 minutes ago</small>
+                        </div>
+
+                    </div>
+
+                    <div class="activity-item">
+
+                        <span class="activity-dot"></span>
+
+                        <div>
+                            <strong>Project task updated</strong>
+                            <p>CROYOLA Promotional Video</p>
+                            <small>1 hour ago</small>
+                        </div>
+
+                    </div>
+
+                    <div class="activity-item">
+
+                        <span class="activity-dot"></span>
+
+                        <div>
+                            <strong>Project completed</strong>
+                            <p>Brand Visual Assets</p>
+                            <small>Yesterday</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ================= MODAL ================= -->
+
+<div class="modal" id="projectModal">
+
+    <div class="modal-box">
+
+        <button class="close-btn" id="closeModal">
+            ×
+        </button>
+
+        <h2 id="modalTitle">Project Details</h2>
+
+        <p id="modalDescription">
+            Project information.
+        </p>
+
+        <div class="modal-details">
+
+            <div>
+                <span>Status</span>
+                <strong id="modalStatus">In Progress</strong>
+            </div>
+
+            <div>
+                <span>Progress</span>
+                <strong id="modalProgress">65%</strong>
+            </div>
+
+        </div>
+
+        <div class="modal-actions">
+
+            <button id="openTaskBtn" class="primary-btn">
+                View Related Tasks
+            </button>
+
+            <button id="closeModal2" class="secondary-btn">
+                Close
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="user-projects.js"></script>
+
+</body>
+</html>

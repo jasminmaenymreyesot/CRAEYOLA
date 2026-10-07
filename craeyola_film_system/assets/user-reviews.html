@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CROYOLA | Reviews</title>
+
+    <link
+        rel="stylesheet"
+        href="user-reviews.css"
+    >
+
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- ======================================
+         SIDEBAR
+    ======================================= -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-brand">
+
+            <img
+                src="creoyola.png"
+                alt="CROYOLA"
+            >
+
+        </div>
+
+        <p class="menu-title">
+            WORKSPACE
+        </p>
+
+        <nav>
+
+            <a href="user-dashboard.html">
+
+                <span>▣</span>
+
+                Dashboard
+
+            </a>
+
+
+            <a href="user-projects.html">
+
+                <span>📁</span>
+
+                My Projects
+
+            </a>
+
+
+            <a href="user-tasks.html">
+
+                <span>✓</span>
+
+                My Tasks
+
+            </a>
+
+
+            <a href="user-assets.html">
+
+                <span>🎨</span>
+
+                My Assets
+
+            </a>
+
+
+            <a href="user-versions.html">
+
+                <span>🔄</span>
+
+                Versions
+
+            </a>
+
+
+            <a
+                href="user-reviews.html"
+                class="active"
+            >
+
+                <span>💬</span>
+
+                Reviews
+
+            </a>
+
+
+            <a href="user-forms.html">
+
+                <span>📄</span>
+
+                Forms
+
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <button
+                id="logoutBtn"
+                class="logout"
+            >
+
+                ↪ Logout
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ======================================
+         MAIN
+    ======================================= -->
+
+    <main class="main">
+
+
+        <!-- ======================================
+             TOPBAR
+        ======================================= -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h2>
+                    Reviews
+                </h2>
+
+                <p>
+                    View feedback and review comments
+                    for your projects.
+                </p>
+
+            </div>
+
+
+            <div class="profile">
+
+                <div>
+
+                    <strong id="userName">
+                        User
+                    </strong>
+
+                    <small id="userRole">
+                        Creative User
+                    </small>
+
+                </div>
+
+
+                <div
+                    class="avatar"
+                    id="userAvatar"
+                >
+                    U
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ======================================
+             CONTENT
+        ======================================= -->
+
+        <section class="content">
+
+
+            <!-- ======================================
+                 PAGE HEADER
+            ======================================= -->
+
+            <div class="page-header">
+
+                <div>
+
+                    <span class="page-label">
+                        PROJECT FEEDBACK
+                    </span>
+
+                    <h1>
+                        My Reviews
+                    </h1>
+
+                    <p>
+                        Review feedback, comments,
+                        and approval results from
+                        your projects.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ======================================
+                 STATS
+            ======================================= -->
+
+            <div class="stats">
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        R
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Reviews
+                        </span>
+
+                        <strong id="totalReviews">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        P
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Pending
+                        </span>
+
+                        <strong id="pendingReviews">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Approved
+                        </span>
+
+                        <strong id="approvedReviews">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        !
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Needs Revision
+                        </span>
+
+                        <strong id="revisionReviews">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- ======================================
+                 FILTER
+            ======================================= -->
+
+            <div class="filter-panel">
+
+
+                <div class="filter-group">
+
+                    <label for="projectFilter">
+                        Project
+                    </label>
+
+                    <select id="projectFilter">
+
+                        <option value="all">
+                            All Projects
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="filter-group">
+
+                    <label for="statusFilter">
+                        Status
+                    </label>
+
+                    <select id="statusFilter">
+
+                        <option value="all">
+                            All Status
+                        </option>
+
+                        <option value="Pending">
+                            Pending
+                        </option>
+
+                        <option value="Approved">
+                            Approved
+                        </option>
+
+                        <option value="Needs Revision">
+                            Needs Revision
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="filter-group">
+
+                    <label for="searchReview">
+                        Search
+                    </label>
+
+                    <input
+                        type="text"
+                        id="searchReview"
+                        placeholder="Search reviews..."
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- ======================================
+                 REVIEWS PANEL
+            ======================================= -->
+
+            <div class="panel">
+
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h3>
+                            Review Feedback
+                        </h3>
+
+                        <p>
+                            Latest comments and project reviews
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        id="refreshBtn"
+                        class="small-btn"
+                    >
+
+                        ↻ Refresh
+
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="reviewList"
+                    class="review-list"
+                >
+
+                    <!-- JS GENERATED REVIEWS -->
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ======================================
+     REVIEW MODAL
+====================================== -->
+
+<div
+    class="modal"
+    id="reviewModal"
+>
+
+
+    <div class="modal-box">
+
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2 id="modalTitle">
+                    Review
+                </h2>
+
+                <p id="modalSubtitle">
+                    Review details
+                </p>
+
+            </div>
+
+
+            <button
+                class="close-btn"
+                id="closeModalBtn"
+            >
+
+                ×
+
+            </button>
+
+        </div>
+
+
+        <div class="modal-content">
+
+
+            <div class="detail-row">
+
+                <span>
+                    Project
+                </span>
+
+                <strong id="modalProject">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <span>
+                    Reviewer
+                </span>
+
+                <strong id="modalReviewer">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <span>
+                    Date
+                </span>
+
+                <strong id="modalDate">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <span>
+                    Status
+                </span>
+
+                <strong id="modalStatus">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="feedback-box">
+
+                <span>
+                    Feedback
+                </span>
+
+                <p id="modalFeedback">
+                    -
+                </p>
+
+            </div>
+
+
+            <div class="reply-section">
+
+                <label for="replyText">
+                    Your Reply
+                </label>
+
+                <textarea
+                    id="replyText"
+                    rows="4"
+                    placeholder="Write a reply to the reviewer..."
+                ></textarea>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="cancel-btn"
+                    id="cancelBtn"
+                >
+                    Close
+                </button>
+
+                <button
+                    type="button"
+                    class="primary-btn"
+                    id="replyBtn"
+                >
+                    Send Reply
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="user-reviews.js"></script>
+
+</body>
+
+</html>

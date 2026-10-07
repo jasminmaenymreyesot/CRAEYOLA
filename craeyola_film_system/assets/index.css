@@ -1,0 +1,101 @@
+\* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f1ea;
+    min-height: 100vh;
+}
+
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.login-card {
+    width: 450px;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    text-align: center;
+}
+
+.brand {
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.brand img {
+    width: 250px;
+    height: 120px;
+    display: block;
+    margin: auto;
+    transform: translateY(0px, -20px);
+}
+
+.login-card h1 {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.muted {
+    color: #777;
+    margin-bottom: 30px;
+}
+
+.role-choice {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.choice {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 18px;
+    border: 1px solid #ddd;
+    border-radius: 14px;
+
+    text-decoration: none;
+    color: #222;
+
+    background: #fff;
+
+    transition: 0.2s ease;
+}
+
+.choice:hover {
+    transform: translateY(-3px);
+    border-color: #333;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.choice > span {
+    font-size: 35px;
+}
+
+.choice div {
+    text-align: left;
+}
+
+.choice b {
+    display: block;
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+
+.choice small {
+    color: #777;
+    font-size: 13px;
+}

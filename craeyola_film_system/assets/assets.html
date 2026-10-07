@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CROYOLA | Assets</title>
+
+    <link rel="stylesheet" href="assets.css">
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+         <div class="sidebar-brand">
+            <img src="creoyola.png">
+        </div>
+
+        <div class="role-label">
+            PROJECT MANAGER
+        </div>
+        
+        <nav>
+
+            <a href="admin-dashboard.html">
+                <span>▣</span>
+                Dashboard
+            </a>
+
+            <a href="project.html">
+                <span>◫</span>
+                Projects
+            </a>
+
+            <a href="tasks.html">
+                <span>✓</span>
+                Tasks
+            </a>
+
+            <a href="assets.html" class="active">
+                <span>◈</span>
+                Assets
+            </a>
+
+            <a href="version.html">
+                <span>↻</span>
+                Versions
+            </a>
+
+            <a href="reviews.html">
+                <span>★</span>
+                Reviews
+            </a>
+
+            <a href="forms.html">
+                <span>▤</span>
+                Forms
+            </a>
+
+        </nav>
+
+        <button id="logoutBtn" class="logout">
+            Logout
+        </button>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div>
+                <h2>Asset Management</h2>
+                <p>Manage creative files and production assets.</p>
+            </div>
+
+            <div class="profile">
+                <div class="avatar">PM</div>
+
+                <div>
+                    <strong>Project Manager</strong>
+                    <small>Administrator</small>
+                </div>
+            </div>
+
+        </header>
+
+
+        <!-- CONTENT -->
+        <section class="content">
+
+            <div class="page-heading">
+
+                <div>
+                    <h1>Assets</h1>
+
+                    <p>
+                        Upload, organize and monitor multimedia assets.
+                    </p>
+                </div>
+
+                <button id="newAssetBtn" class="primary-btn">
+                    + Add Asset
+                </button>
+
+            </div>
+
+
+            <!-- STAT CARDS -->
+            <div class="stats">
+
+                <div class="stat-card">
+                    <span>Total Assets</span>
+                    <strong id="totalAssets">0</strong>
+                </div>
+
+                <div class="stat-card">
+                    <span>In Review</span>
+                    <strong id="reviewAssets">0</strong>
+                </div>
+
+                <div class="stat-card">
+                    <span>Approved</span>
+                    <strong id="approvedAssets">0</strong>
+                </div>
+
+                <div class="stat-card">
+                    <span>Needs Revision</span>
+                    <strong id="revisionAssets">0</strong>
+                </div>
+
+            </div>
+
+
+            <!-- TOOLBAR -->
+            <div class="toolbar">
+
+                <input
+                    type="text"
+                    id="searchAsset"
+                    placeholder="Search assets..."
+                >
+
+                <select id="typeFilter">
+
+                    <option value="all">
+                        All Types
+                    </option>
+
+                    <option value="Image">
+                        Image
+                    </option>
+
+                    <option value="Video">
+                        Video
+                    </option>
+
+                    <option value="Audio">
+                        Audio
+                    </option>
+
+                    <option value="Document">
+                        Document
+                    </option>
+
+                    <option value="3D">
+                        3D
+                    </option>
+
+                </select>
+
+
+                <select id="statusFilter">
+
+                    <option value="all">
+                        All Status
+                    </option>
+
+                    <option value="Draft">
+                        Draft
+                    </option>
+
+                    <option value="In Review">
+                        In Review
+                    </option>
+
+                    <option value="Approved">
+                        Approved
+                    </option>
+
+                    <option value="Needs Revision">
+                        Needs Revision
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- TABLE -->
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h3>Creative Assets</h3>
+
+                        <p>
+                            Files submitted for production.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Asset</th>
+                                <th>Project</th>
+                                <th>Type</th>
+                                <th>Owner</th>
+                                <th>Version</th>
+                                <th>Status</th>
+                                <th>Action</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="assetTable">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ADD ASSET MODAL -->
+
+<div id="assetModal" class="modal">
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+            <div>
+                <h2>Add Asset</h2>
+                <p>Add a new creative asset.</p>
+            </div>
+
+            <button id="closeModal" class="close">
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="assetForm">
+
+            <label>
+                Asset Name
+            </label>
+
+            <input
+                type="text"
+                id="assetName"
+                placeholder="Example: Character Design"
+                required
+            >
+
+
+            <label>
+                Project
+            </label>
+
+            <select id="assetProject" required>
+                <option value="">
+                    Select Project
+                </option>
+            </select>
+
+
+            <label>
+                Asset Type
+            </label>
+
+            <select id="assetType" required>
+
+                <option value="">
+                    Select Type
+                </option>
+
+                <option value="Image">
+                    Image
+                </option>
+
+                <option value="Video">
+                    Video
+                </option>
+
+                <option value="Audio">
+                    Audio
+                </option>
+
+                <option value="Document">
+                    Document
+                </option>
+
+                <option value="3D">
+                    3D
+                </option>
+
+            </select>
+
+
+            <label>
+                Owner / Role
+            </label>
+
+            <select id="assetOwner" required>
+
+                <option value="">
+                    Select Owner
+                </option>
+
+                <option value="Artist">
+                    Artist
+                </option>
+
+                <option value="Animator">
+                    Animator
+                </option>
+
+                <option value="Scriptwriter">
+                    Scriptwriter
+                </option>
+
+                <option value="Client">
+                    Client
+                </option>
+
+            </select>
+
+
+            <label>
+                Initial Version
+            </label>
+
+            <input
+                type="text"
+                id="assetVersion"
+                value="v1.0"
+                required
+            >
+
+
+            <label>
+                Status
+            </label>
+
+            <select id="assetStatus">
+
+                <option value="Draft">
+                    Draft
+                </option>
+
+                <option value="In Review">
+                    In Review
+                </option>
+
+                <option value="Approved">
+                    Approved
+                </option>
+
+                <option value="Needs Revision">
+                    Needs Revision
+                </option>
+
+            </select>
+
+
+            <label>
+                Description
+            </label>
+
+            <textarea
+                id="assetDescription"
+                placeholder="Describe the asset..."
+            ></textarea>
+
+
+            <div class="form-actions">
+
+                <button
+                    type="button"
+                    id="cancelBtn"
+                    class="secondary-btn"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                >
+                    Add Asset
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="assets.js"></script>
+
+</body>
+</html>

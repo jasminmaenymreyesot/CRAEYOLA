@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CROYOLA | Forms</title>
+
+    <link rel="stylesheet" href="forms.css">
+
+</head>
+
+<body>
+
+<div class="layout">
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+         <div class="sidebar-brand">
+            <img src="creoyola.png">
+        </div>
+
+        <div class="role-label">
+            PROJECT MANAGER
+        </div>
+
+        <nav>
+
+            <a href="admin-dashboard.html">
+                <span>▣</span>
+                Dashboard
+            </a>
+
+            <a href="project.html">
+                <span>◫</span>
+                Projects
+            </a>
+
+            <a href="tasks.html">
+                <span>✓</span>
+                Tasks
+            </a>
+
+            <a href="assets.html">
+                <span>◈</span>
+                Assets
+            </a>
+
+            <a href="version.html">
+                <span>↻</span>
+                Versions
+            </a>
+
+            <a href="reviews.html">
+                <span>★</span>
+                Reviews
+            </a>
+
+            <a href="forms.html" class="active">
+                <span>▤</span>
+                Forms
+            </a>
+
+        </nav>
+
+
+        <button
+            id="logoutBtn"
+            class="logout"
+        >
+            Logout
+        </button>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="main">
+
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h2>
+                    Production Forms
+                </h2>
+
+                <p>
+                    Manage project requests and production submissions.
+                </p>
+
+            </div>
+
+
+            <div class="profile">
+
+                <div class="avatar">
+                    PM
+                </div>
+
+                <div>
+
+                    <strong>
+                        Project Manager
+                    </strong>
+
+                    <small>
+                        Administrator
+                    </small>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- CONTENT -->
+
+        <section class="content">
+
+
+            <div class="page-heading">
+
+                <div>
+
+                    <h1>
+                        Forms
+                    </h1>
+
+                    <p>
+                        Create and monitor production forms.
+                    </p>
+
+                </div>
+
+
+                <button
+                    id="newFormBtn"
+                    class="primary-btn"
+                >
+                    + Create Form
+                </button>
+
+            </div>
+
+
+            <!-- STATS -->
+
+            <div class="stats">
+
+                <div class="stat-card">
+
+                    <span>
+                        Total Forms
+                    </span>
+
+                    <strong id="totalForms">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span>
+                        Pending
+                    </span>
+
+                    <strong id="pendingForms">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span>
+                        Approved
+                    </span>
+
+                    <strong id="approvedForms">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span>
+                        Completed
+                    </span>
+
+                    <strong id="completedForms">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- TOOLBAR -->
+
+            <div class="toolbar">
+
+                <input
+                    type="text"
+                    id="searchForm"
+                    placeholder="Search forms..."
+                >
+
+
+                <select id="formStatusFilter">
+
+                    <option value="all">
+                        All Status
+                    </option>
+
+                    <option value="Pending">
+                        Pending
+                    </option>
+
+                    <option value="Approved">
+                        Approved
+                    </option>
+
+                    <option value="Completed">
+                        Completed
+                    </option>
+
+                    <option value="Rejected">
+                        Rejected
+                    </option>
+
+                </select>
+
+
+                <select id="formTypeFilter">
+
+                    <option value="all">
+                        All Types
+                    </option>
+
+                    <option value="Project Brief">
+                        Project Brief
+                    </option>
+
+                    <option value="Asset Request">
+                        Asset Request
+                    </option>
+
+                    <option value="Revision Request">
+                        Revision Request
+                    </option>
+
+                    <option value="Production Request">
+                        Production Request
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- FORM LIST -->
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h3>
+                            Production Requests
+                        </h3>
+
+                        <p>
+                            Requests submitted by project participants.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="form-list"
+                    id="formList"
+                ></div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- CREATE FORM MODAL -->
+
+<div
+    id="formModal"
+    class="modal"
+>
+
+    <div class="modal-box">
+
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2>
+                    Create Production Form
+                </h2>
+
+                <p>
+                    Submit a new project request.
+                </p>
+
+            </div>
+
+
+            <button
+                id="closeModal"
+                class="close"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="productionForm">
+
+
+            <label>
+                Form Title
+            </label>
+
+            <input
+                type="text"
+                id="formTitle"
+                placeholder="Example: Character Asset Request"
+                required
+            >
+
+
+            <label>
+                Project
+            </label>
+
+            <select
+                id="formProject"
+                required
+            >
+
+                <option value="">
+                    Select Project
+                </option>
+
+            </select>
+
+
+            <label>
+                Form Type
+            </label>
+
+            <select
+                id="formType"
+                required
+            >
+
+                <option value="Project Brief">
+                    Project Brief
+                </option>
+
+                <option value="Asset Request">
+                    Asset Request
+                </option>
+
+                <option value="Revision Request">
+                    Revision Request
+                </option>
+
+                <option value="Production Request">
+                    Production Request
+                </option>
+
+            </select>
+
+
+            <label>
+                Submitted By
+            </label>
+
+            <select
+                id="submittedBy"
+                required
+            >
+
+                <option value="">
+                    Select Role
+                </option>
+
+                <option value="Client">
+                    Client
+                </option>
+
+                <option value="Artist">
+                    Artist
+                </option>
+
+                <option value="Scriptwriter">
+                    Scriptwriter
+                </option>
+
+                <option value="Animator">
+                    Animator
+                </option>
+
+                <option value="Project Manager">
+                    Project Manager
+                </option>
+
+            </select>
+
+
+            <label>
+                Priority
+            </label>
+
+            <select id="formPriority">
+
+                <option value="Low">
+                    Low
+                </option>
+
+                <option value="Medium" selected>
+                    Medium
+                </option>
+
+                <option value="High">
+                    High
+                </option>
+
+            </select>
+
+
+            <label>
+                Description / Request
+            </label>
+
+            <textarea
+                id="formDescription"
+                placeholder="Describe the request..."
+                required
+            ></textarea>
+
+
+            <div class="form-actions">
+
+                <button
+                    type="button"
+                    id="cancelBtn"
+                    class="secondary-btn"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                >
+                    Create Form
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="forms.js"></script>
+
+</body>
+
+</html>

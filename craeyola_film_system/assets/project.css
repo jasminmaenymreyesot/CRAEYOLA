@@ -1,0 +1,926 @@
+/* =========================================
+   CROYOLA PROJECT MANAGEMENT
+   SAME LAYOUT AS ADMIN DASHBOARD
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f6f4fb;
+    color: #27233a;
+}
+
+
+/* =========================================
+   SIDEBAR
+   SAME AS ADMIN DASHBOARD
+========================================= */
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    width: 240px;
+    height: 100vh;
+
+    background-color: #21183a;
+
+    display: flex;
+    flex-direction: column;
+
+    z-index: 1000;
+}
+
+
+/* LOGO */
+
+.sidebar-brand {
+    padding: 25px 20px 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.sidebar-brand img {
+    width: 150px;
+    height: auto;
+
+    display: block;
+
+    transform: translateY(-20px);
+}
+
+
+/* ROLE */
+
+.role-label {
+    padding: 0 24px 25px;
+
+    color: #c4bdd5;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    transform: translateY(-20px);
+}
+
+
+/* NAVIGATION */
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+
+    padding: 0 14px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 13px 16px;
+
+    color: #c4bdd5;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+}
+
+.nav-item:hover {
+    background-color: #30264c;
+    color: #ffffff;
+}
+
+.nav-item.active {
+    background-color: #7254c8;
+    color: #ffffff;
+}
+
+.nav-item span {
+    width: 20px;
+    text-align: center;
+}
+
+
+/* SIDEBAR BOTTOM */
+
+.sidebar-bottom {
+    margin-top: auto;
+
+    padding: 20px 14px;
+}
+
+.logout-button {
+    width: 100%;
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background-color: #30264c;
+
+    color: #c4bdd5;
+
+    cursor: pointer;
+
+    font-size: 14px;
+}
+
+.logout-button:hover {
+    background-color: #7254c8;
+    color: #ffffff;
+}
+
+
+/* =========================================
+   MAIN CONTENT
+   KEPT AS PROJECTS PAGE
+========================================= */
+
+.main-content {
+    margin-left: 240px;
+
+    min-height: 100vh;
+
+    padding: 30px;
+
+    background-color: #f6f4fb;
+}
+
+
+/* =========================================
+   TOP BAR
+========================================= */
+
+.topbar {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 30px;
+}
+
+.page-label {
+    color: #817a8e;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 5px;
+}
+
+.topbar h1 {
+    color: #27233a;
+
+    font-size: 30px;
+}
+
+.profile {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.profile-avatar {
+    width: 44px;
+    height: 44px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background-color: #7654c8;
+
+    color: #ffffff;
+
+    font-weight: bold;
+}
+
+.profile-info {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.profile-info strong {
+    color: #27233a;
+
+    font-size: 14px;
+}
+
+.profile-info small {
+    color: #817a8e;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   PAGE HEADER
+========================================= */
+
+.page-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 24px;
+}
+
+.page-header h2 {
+    color: #27233a;
+
+    font-size: 21px;
+
+    margin-bottom: 7px;
+}
+
+.page-header p {
+    color: #817a8e;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.primary-button {
+    display: inline-block;
+
+    padding: 11px 18px;
+
+    background-color: #7654c8;
+
+    color: #ffffff;
+
+    border: none;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.primary-button:hover {
+    background-color: #6243ad;
+}
+
+.secondary-button {
+    padding: 11px 18px;
+
+    background-color: #ffffff;
+
+    color: #817a8e;
+
+    border: 1px solid #e5e0eb;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+
+    cursor: pointer;
+}
+
+.secondary-button:hover {
+    background-color: #eee9fa;
+
+    color: #7654c8;
+}
+
+
+/* =========================================
+   TOOLBAR
+========================================= */
+
+.toolbar {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+.search-box {
+    flex: 1;
+
+    max-width: 450px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #e5e0eb;
+
+    border-radius: 10px;
+
+    padding: 0 14px;
+}
+
+.search-box span {
+    color: #817a8e;
+
+    font-size: 18px;
+}
+
+.search-box input {
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    padding: 13px 0;
+
+    background-color: transparent;
+
+    color: #27233a;
+
+    font-size: 13px;
+}
+
+.toolbar select {
+    padding: 12px 14px;
+
+    border: 1px solid #e5e0eb;
+
+    background-color: #ffffff;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    color: #817a8e;
+
+    cursor: pointer;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   PANEL
+========================================= */
+
+.panel {
+    background-color: #ffffff;
+
+    border: 1px solid #e5e0eb;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+}
+
+.panel-header {
+    padding: 20px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    border-bottom: 1px solid #e5e0eb;
+}
+
+.panel-header h2 {
+    color: #27233a;
+
+    font-size: 16px;
+
+    margin-bottom: 4px;
+}
+
+.panel-header p {
+    color: #817a8e;
+
+    font-size: 12px;
+}
+
+.project-total {
+    color: #7654c8;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================
+   TABLE
+========================================= */
+
+.table-container {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+th {
+    padding: 13px 20px;
+
+    background-color: #f8f6fc;
+
+    color: #817a8e;
+
+    text-align: left;
+
+    font-size: 11px;
+}
+
+td {
+    padding: 16px 20px;
+
+    border-top: 1px solid #eee9f4;
+
+    color: #27233a;
+
+    font-size: 12px;
+}
+
+tbody tr:hover {
+    background-color: #faf9fd;
+}
+
+
+/* =========================================
+   STATUS BADGES
+========================================= */
+
+.badge {
+    display: inline-block;
+
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+
+    font-weight: bold;
+}
+
+.badge.planning {
+    background-color: #eee9fa;
+
+    color: #7654c8;
+}
+
+.badge.pre-production {
+    background-color: #eee9fa;
+
+    color: #7654c8;
+}
+
+.badge.in-production {
+    background-color: #e9e1f7;
+
+    color: #6243ad;
+}
+
+.badge.review {
+    background-color: #f0e8fa;
+
+    color: #8c63c9;
+}
+
+.badge.completed {
+    background-color: #e8e0f4;
+
+    color: #6243ad;
+}
+
+
+/* =========================================
+   PROGRESS
+========================================= */
+
+.progress-wrapper {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+}
+
+.progress-bar {
+    width: 80px;
+
+    height: 7px;
+
+    background-color: #eee9f4;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+
+    background-color: #7654c8;
+
+    border-radius: 20px;
+}
+
+.progress-wrapper span {
+    color: #817a8e;
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   VIEW BUTTON
+========================================= */
+
+.view-button {
+    padding: 7px 11px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background-color: #eee9fa;
+
+    color: #7654c8;
+
+    cursor: pointer;
+
+    font-size: 11px;
+
+    font-weight: bold;
+}
+
+.view-button:hover {
+    background-color: #7654c8;
+
+    color: #ffffff;
+}
+
+
+/* =========================================
+   MODAL
+========================================= */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    background-color: rgba(33, 24, 58, 0.55);
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 500;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-card {
+    width: 100%;
+
+    max-width: 550px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background-color: #ffffff;
+
+    border-radius: 12px;
+
+    padding: 25px;
+}
+
+.modal-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    margin-bottom: 25px;
+}
+
+.modal-header h2 {
+    color: #27233a;
+
+    font-size: 20px;
+
+    margin-bottom: 5px;
+}
+
+.modal-header p {
+    color: #817a8e;
+
+    font-size: 12px;
+}
+
+.close-button {
+    width: 32px;
+
+    height: 32px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background-color: #eee9fa;
+
+    color: #7654c8;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+.close-button:hover {
+    background-color: #7654c8;
+
+    color: #ffffff;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #27233a;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    padding: 12px 13px;
+
+    border: 1px solid #e5e0eb;
+
+    border-radius: 9px;
+
+    outline: none;
+
+    background-color: #ffffff;
+
+    color: #27233a;
+
+    font-family: inherit;
+
+    font-size: 13px;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #7654c8;
+
+    box-shadow: 0 0 0 3px rgba(118, 84, 200, 0.10);
+}
+
+.form-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+.modal-actions {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+
+/* =========================================
+   DETAILS
+========================================= */
+
+.details-content {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.detail-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    padding-bottom: 14px;
+
+    border-bottom: 1px solid #e5e0eb;
+}
+
+.detail-row span {
+    color: #817a8e;
+
+    font-size: 13px;
+}
+
+.detail-row strong {
+    color: #27233a;
+
+    font-size: 13px;
+}
+
+.description-box {
+    background-color: #eee9fa;
+
+    border-radius: 10px;
+
+    padding: 15px;
+}
+
+.description-box span {
+    display: block;
+
+    color: #7654c8;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+.description-box p {
+    color: #817a8e;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   RESPONSIVE
+   SAME BREAKPOINT STYLE AS ADMIN DASHBOARD
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .toolbar {
+        flex-wrap: wrap;
+    }
+
+    .search-box {
+        max-width: 100%;
+    }
+}
+
+
+@media (max-width: 800px) {
+
+    .sidebar {
+        width: 200px;
+    }
+
+    .main-content {
+        margin-left: 200px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .sidebar {
+        position: relative;
+
+        width: 100%;
+        height: auto;
+    }
+
+    .main-content {
+        margin-left: 0;
+
+        padding: 20px;
+    }
+
+    .topbar {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .page-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .toolbar {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .search-box {
+        width: 100%;
+
+        max-width: none;
+    }
+
+    .toolbar select {
+        width: 100%;
+
+        height: 45px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}

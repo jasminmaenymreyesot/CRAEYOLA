@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CROYOLA | My Versions</title>
+
+    <link
+        rel="stylesheet"
+        href="./user-versions.css"
+    >
+
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- =====================================================
+         SIDEBAR
+         SAME AS USER-ASSETS
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-brand">
+            <img
+                src="creoyola.png"
+                alt="CROYOLA"
+            >
+        </div>
+
+        <p class="menu-title">
+            WORKSPACE
+        </p>
+
+        <nav>
+
+            <a href="user-dashboard.html">
+                <span>▣</span>
+                Dashboard
+            </a>
+
+            <a href="user-projects.html">
+                <span>📁</span>
+                My Projects
+            </a>
+
+            <a href="user-tasks.html">
+                <span>✓</span>
+                My Tasks
+            </a>
+
+            <a href="user-assets.html">
+                <span>🎨</span>
+                My Assets
+            </a>
+
+            <a
+                href="user-versions.html"
+                class="active"
+            >
+                <span>🔄</span>
+                Versions
+            </a>
+
+            <a href="user-reviews.html">
+                <span>💬</span>
+                Reviews
+            </a>
+
+            <a href="user-forms.html">
+                <span>📄</span>
+                Forms
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <button
+                type="button"
+                id="logoutBtn"
+                class="logout"
+            >
+                ↪ Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="main">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div>
+                <h2>Versions</h2>
+
+                <p>
+                    Manage and track your submitted versions.
+                </p>
+            </div>
+
+
+            <div class="profile">
+
+                <div class="profile-info">
+
+                    <strong id="userName">
+                        User
+                    </strong>
+
+                    <small id="userRole">
+                        Creative Member
+                    </small>
+
+                </div>
+
+                <div
+                    class="avatar"
+                    id="userAvatar"
+                >
+                    U
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =====================================================
+             PAGE CONTENT
+        ====================================================== -->
+
+        <section class="content">
+
+            <!-- PAGE HEADER -->
+
+            <div class="page-header">
+
+                <div>
+
+                    <span class="page-label">
+                        VERSION WORKSPACE
+                    </span>
+
+                    <h1>
+                        My Versions
+                    </h1>
+
+                    <p>
+                        View, submit and manage different
+                        versions of your multimedia work.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="primary-btn"
+                    id="newVersionBtn"
+                >
+                    <span>+</span>
+                    New Version
+                </button>
+
+            </div>
+
+
+            <!-- =================================================
+                 STATS
+            ================================================== -->
+
+            <div class="stats">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon purple">
+                        V
+                    </div>
+
+                    <div>
+                        <span>
+                            Total Versions
+                        </span>
+
+                        <strong id="totalVersions">
+                            0
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon orange">
+                        ◔
+                    </div>
+
+                    <div>
+                        <span>
+                            Pending Review
+                        </span>
+
+                        <strong id="pendingVersions">
+                            0
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon green">
+                        ✓
+                    </div>
+
+                    <div>
+                        <span>
+                            Approved
+                        </span>
+
+                        <strong id="approvedVersions">
+                            0
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon red">
+                        !
+                    </div>
+
+                    <div>
+                        <span>
+                            Revision Needed
+                        </span>
+
+                        <strong id="revisionVersions">
+                            0
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 FILTERS
+            ================================================== -->
+
+            <div class="filter-panel">
+
+                <div class="filter-group">
+
+                    <label for="projectFilter">
+                        Project
+                    </label>
+
+                    <select id="projectFilter">
+
+                        <option value="all">
+                            All Projects
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="filter-group">
+
+                    <label for="statusFilter">
+                        Status
+                    </label>
+
+                    <select id="statusFilter">
+
+                        <option value="all">
+                            All Status
+                        </option>
+
+                        <option value="Pending Review">
+                            Pending Review
+                        </option>
+
+                        <option value="Approved">
+                            Approved
+                        </option>
+
+                        <option value="Revision Needed">
+                            Revision Needed
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="filter-group search-group">
+
+                    <label for="searchVersion">
+                        Search
+                    </label>
+
+                    <input
+                        type="text"
+                        id="searchVersion"
+                        placeholder="Search version..."
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 VERSION HISTORY
+            ================================================== -->
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h3>
+                            Version History
+                        </h3>
+
+                        <p>
+                            Your latest project submissions.
+                        </p>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="text-btn"
+                        id="refreshBtn"
+                    >
+                        Refresh
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="version-table"
+                    id="versionList"
+                >
+
+                    <!-- VERSION 1 -->
+
+                    <div
+                        class="version-row"
+                        data-project="CROYOLA Website"
+                        data-status="Pending Review"
+                    >
+
+                        <div class="version-main">
+
+                            <div class="version-icon">
+                                V2
+                            </div>
+
+                            <div class="version-info">
+
+                                <strong>
+                                    Homepage Design V2
+                                </strong>
+
+                                <span>
+                                    CROYOLA Website
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="version-date">
+                            Oct 06, 2026
+                        </div>
+
+                        <span class="version-status pending">
+                            Pending Review
+                        </span>
+
+                        <button
+                            type="button"
+                            class="version-btn"
+                        >
+                            View
+                        </button>
+
+                    </div>
+
+
+                    <!-- VERSION 2 -->
+
+                    <div
+                        class="version-row"
+                        data-project="Brand Identity"
+                        data-status="Approved"
+                    >
+
+                        <div class="version-main">
+
+                            <div class="version-icon">
+                                V3
+                            </div>
+
+                            <div class="version-info">
+
+                                <strong>
+                                    Logo Final Version
+                                </strong>
+
+                                <span>
+                                    Brand Identity
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="version-date">
+                            Oct 04, 2026
+                        </div>
+
+                        <span class="version-status approved">
+                            Approved
+                        </span>
+
+                        <button
+                            type="button"
+                            class="version-btn"
+                        >
+                            View
+                        </button>
+
+                    </div>
+
+
+                    <!-- VERSION 3 -->
+
+                    <div
+                        class="version-row"
+                        data-project="Multimedia Campaign"
+                        data-status="Revision Needed"
+                    >
+
+                        <div class="version-main">
+
+                            <div class="version-icon">
+                                V1
+                            </div>
+
+                            <div class="version-info">
+
+                                <strong>
+                                    Campaign Draft V1
+                                </strong>
+
+                                <span>
+                                    Multimedia Campaign
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="version-date">
+                            Oct 02, 2026
+                        </div>
+
+                        <span class="version-status revision">
+                            Revision Needed
+                        </span>
+
+                        <button
+                            type="button"
+                            class="version-btn"
+                        >
+                            View
+                        </button>
+
+                    </div>
+
+
+                    <!-- VERSION 4 -->
+
+                    <div
+                        class="version-row"
+                        data-project="CROYOLA Website"
+                        data-status="Approved"
+                    >
+
+                        <div class="version-main">
+
+                            <div class="version-icon">
+                                V1
+                            </div>
+
+                            <div class="version-info">
+
+                                <strong>
+                                    Initial Website Layout
+                                </strong>
+
+                                <span>
+                                    CROYOLA Website
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="version-date">
+                            Sep 29, 2026
+                        </div>
+
+                        <span class="version-status approved">
+                            Approved
+                        </span>
+
+                        <button
+                            type="button"
+                            class="version-btn"
+                        >
+                            View
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- =========================================================
+     NEW VERSION MODAL
+========================================================== -->
+
+<div
+    class="modal"
+    id="versionModal"
+>
+
+    <div class="modal-box">
+
+        <button
+            type="button"
+            class="close-btn"
+            id="closeModal"
+        >
+            ×
+        </button>
+
+
+        <div class="modal-header">
+
+            <span class="modal-label">
+                VERSION SUBMISSION
+            </span>
+
+            <h2>
+                Submit New Version
+            </h2>
+
+            <p>
+                Add the details of the version you want
+                to submit for project review.
+            </p>
+
+        </div>
+
+
+        <form id="versionForm">
+
+            <div class="form-group">
+
+                <label for="versionProject">
+                    Project
+                </label>
+
+                <select
+                    id="versionProject"
+                    required
+                >
+
+                    <option value="">
+                        Select Project
+                    </option>
+
+                    <option value="CROYOLA Website">
+                        CROYOLA Website
+                    </option>
+
+                    <option value="Brand Identity">
+                        Brand Identity
+                    </option>
+
+                    <option value="Multimedia Campaign">
+                        Multimedia Campaign
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="versionName">
+                    Version Name
+                </label>
+
+                <input
+                    type="text"
+                    id="versionName"
+                    placeholder="Example: Homepage Design V3"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="versionNumber">
+                        Version
+                    </label>
+
+                    <input
+                        type="text"
+                        id="versionNumber"
+                        placeholder="V1"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="versionDate">
+                        Submission Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="versionDate"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="versionDescription">
+                    Description
+                </label>
+
+                <textarea
+                    id="versionDescription"
+                    rows="4"
+                    placeholder="Describe what was changed or updated in this version..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="versionFile">
+                    Upload File
+                </label>
+
+                <div class="upload-box">
+
+                    <input
+                        type="file"
+                        id="versionFile"
+                    >
+
+                    <span>
+                        Select multimedia file
+                    </span>
+
+                </div>
+
+                <small class="form-note">
+                    You can upload the latest version of your work.
+                </small>
+
+            </div>
+
+
+            <div class="form-actions">
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    id="cancelVersionBtn"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                >
+                    Submit Version
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="./user-versions.js"></script>
+
+</body>
+
+</html>

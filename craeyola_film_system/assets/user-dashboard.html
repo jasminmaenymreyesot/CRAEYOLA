@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CROYOLA | User Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="user-dashboard.css"
+    >
+
+</head>
+
+<body>
+
+<div class="layout">
+
+<aside class="sidebar">
+
+    <div class="sidebar-brand">
+        <img src="creoyola.png" alt="CROYOLA">
+    </div>
+
+    <p class="menu-title">WORKSPACE</p>
+
+    <nav>
+
+        <a href="user-dashboard.html" class="active">
+            <span>▣</span>
+            Dashboard
+        </a>
+
+        <a href="user-projects.html">
+            <span>📁</span>
+            My Projects
+        </a>
+
+        <a href="user-tasks.html">
+            <span>✓</span>
+            My Tasks
+        </a>
+
+        <a href="user-assets.html">
+            <span>🎨</span>
+            My Assets
+        </a>
+
+        <a href="user-versions.html">
+            <span>🔄</span>
+            Versions
+        </a>
+
+        <a href="user-reviews.html">
+            <span>💬</span>
+            Reviews
+        </a>
+
+        <a href="user-forms.html">
+            <span>📄</span>
+            Forms
+        </a>
+
+    </nav>
+
+    <div class="sidebar-bottom">
+
+        <button id="logoutBtn" class="logout">
+            ↪ Logout
+        </button>
+
+    </div>
+
+</aside>
+
+
+    <!-- ======================================
+         MAIN
+    ======================================= -->
+
+    <main class="main">
+
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h2 id="topTitle">
+                    My Workspace
+                </h2>
+
+                <p id="topDescription">
+                    Welcome to your CROYOLA workspace.
+                </p>
+
+            </div>
+
+
+            <div class="profile">
+
+                <div
+                    class="avatar"
+                    id="userAvatar"
+                >
+                    U
+                </div>
+
+
+                <div>
+
+                    <strong id="userName">
+                        User
+                    </strong>
+
+                    <small id="userRole">
+                        Team Member
+                    </small>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ======================================
+             CONTENT
+        ======================================= -->
+
+        <section class="content">
+
+
+            <!-- WELCOME -->
+
+            <div class="welcome">
+
+                <div>
+
+                    <span class="welcome-label">
+                        CROYOLA WORKSPACE
+                    </span>
+
+
+                    <h1 id="welcomeTitle">
+                        Welcome back!
+                    </h1>
+
+
+                    <p id="welcomeDescription">
+                        Manage your production work from one place.
+                    </p>
+
+                </div>
+
+
+                <div class="workspace-badge">
+
+                    <span>
+                        ROLE
+                    </span>
+
+                    <strong id="workspaceRole">
+                        TEAM MEMBER
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ======================================
+                 STATS
+            ======================================= -->
+
+            <div class="stats">
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <span>
+                            My Tasks
+                        </span>
+
+                        <strong id="taskCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        ◈
+                    </div>
+
+                    <div>
+
+                        <span>
+                            My Assets
+                        </span>
+
+                        <strong id="assetCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        ★
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Reviews
+                        </span>
+
+                        <strong id="reviewCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        !
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Pending
+                        </span>
+
+                        <strong id="pendingCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ======================================
+                 ROLE WORKSPACE
+            ======================================= -->
+
+            <div class="section-title">
+
+                <div>
+
+                    <h2 id="workspaceTitle">
+                        My Workspace
+                    </h2>
+
+                    <p id="workspaceDescription">
+                        Your production tools.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="workspace-grid"
+                id="workspaceGrid"
+            ></div>
+
+
+
+            <!-- ======================================
+                 LOWER CONTENT
+            ======================================= -->
+
+            <div class="bottom-grid">
+
+
+                <!-- MY TASKS -->
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h3>
+                                My Tasks
+                            </h3>
+
+                            <p>
+                                Your current production assignments.
+                            </p>
+
+                        </div>
+
+
+                        <a href="tasks.html">
+                            View All
+                        </a>
+
+                    </div>
+
+
+                    <div
+                        class="task-list"
+                        id="taskList"
+                    ></div>
+
+                </div>
+
+
+
+                <!-- RECENT ACTIVITY -->
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h3>
+                                Recent Activity
+                            </h3>
+
+                            <p>
+                                Latest activity in your workspace.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="activity-list"
+                        id="activityList"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ======================================
+                 QUICK ACTIONS
+            ======================================= -->
+
+            <div class="panel quick-panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h3>
+                            Quick Actions
+                        </h3>
+
+                        <p>
+                            Frequently used production actions.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="quick-actions"
+                    id="quickActions"
+                ></div>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="user-dashboard.js"></script>
+
+</body>
+
+</html>

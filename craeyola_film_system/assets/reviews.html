@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CROYOLA | Reviews</title>
+
+    <link rel="stylesheet" href="reviews.css">
+
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+       <div class="sidebar-brand">
+            <img src="creoyola.png">
+        </div>
+
+        <div class="role-label">
+            PROJECT MANAGER
+        </div>
+
+        <nav>
+
+            <a href="admin-dashboard.html">
+                <span>▣</span>
+                Dashboard
+            </a>
+
+            <a href="project.html">
+                <span>◫</span>
+                Projects
+            </a>
+
+            <a href="tasks.html">
+                <span>✓</span>
+                Tasks
+            </a>
+
+            <a href="assets.html">
+                <span>◈</span>
+                Assets
+            </a>
+
+            <a href="version.html">
+                <span>↻</span>
+                Versions
+            </a>
+
+            <a href="reviews.html" class="active">
+                <span>★</span>
+                Reviews
+            </a>
+
+            <a href="forms.html">
+                <span>▤</span>
+                Forms
+            </a>
+
+        </nav>
+
+
+        <button
+            id="logoutBtn"
+            class="logout"
+        >
+            Logout
+        </button>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="main">
+
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h2>
+                    Review Management
+                </h2>
+
+                <p>
+                    Review creative assets and production submissions.
+                </p>
+
+            </div>
+
+
+            <div class="profile">
+
+                <div class="avatar">
+                    PM
+                </div>
+
+                <div>
+
+                    <strong>
+                        Project Manager
+                    </strong>
+
+                    <small>
+                        Administrator
+                    </small>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- CONTENT -->
+
+        <section class="content">
+
+
+            <!-- PAGE HEADER -->
+
+            <div class="page-heading">
+
+                <div>
+
+                    <h1>
+                        Reviews
+                    </h1>
+
+                    <p>
+                        Manage approvals, revisions and feedback.
+                    </p>
+
+                </div>
+
+
+                <button
+                    id="newReviewBtn"
+                    class="primary-btn"
+                >
+                    + New Review
+                </button>
+
+            </div>
+
+
+            <!-- STATS -->
+
+            <div class="stats">
+
+                <div class="stat-card">
+
+                    <span>
+                        Total Reviews
+                    </span>
+
+                    <strong id="totalReviews">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span>
+                        Pending
+                    </span>
+
+                    <strong id="pendingReviews">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span>
+                        Approved
+                    </span>
+
+                    <strong id="approvedReviews">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span>
+                        Revision Needed
+                    </span>
+
+                    <strong id="revisionReviews">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- TOOLBAR -->
+
+            <div class="toolbar">
+
+                <input
+                    type="text"
+                    id="searchReview"
+                    placeholder="Search reviews..."
+                >
+
+
+                <select id="reviewStatusFilter">
+
+                    <option value="all">
+                        All Status
+                    </option>
+
+                    <option value="Pending">
+                        Pending
+                    </option>
+
+                    <option value="Approved">
+                        Approved
+                    </option>
+
+                    <option value="Revision Needed">
+                        Revision Needed
+                    </option>
+
+                    <option value="Rejected">
+                        Rejected
+                    </option>
+
+                </select>
+
+
+                <select id="reviewTypeFilter">
+
+                    <option value="all">
+                        All Types
+                    </option>
+
+                    <option value="Internal">
+                        Internal
+                    </option>
+
+                    <option value="Client">
+                        Client
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- REVIEW PANEL -->
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h3>
+                            Review Queue
+                        </h3>
+
+                        <p>
+                            Creative submissions awaiting evaluation.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="review-list"
+                    id="reviewList"
+                ></div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- NEW REVIEW MODAL -->
+
+<div
+    id="reviewModal"
+    class="modal"
+>
+
+    <div class="modal-box">
+
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2>
+                    New Review
+                </h2>
+
+                <p>
+                    Create a review request.
+                </p>
+
+            </div>
+
+
+            <button
+                id="closeModal"
+                class="close"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="reviewForm">
+
+
+            <label>
+                Asset / Submission
+            </label>
+
+            <input
+                type="text"
+                id="reviewAsset"
+                placeholder="Example: Character Design v2.0"
+                required
+            >
+
+
+            <label>
+                Project
+            </label>
+
+            <select
+                id="reviewProject"
+                required
+            >
+
+                <option value="">
+                    Select Project
+                </option>
+
+            </select>
+
+
+            <label>
+                Reviewer
+            </label>
+
+            <select
+                id="reviewer"
+                required
+            >
+
+                <option value="">
+                    Select Reviewer
+                </option>
+
+                <option value="Project Manager">
+                    Project Manager
+                </option>
+
+                <option value="Client">
+                    Client
+                </option>
+
+                <option value="Art Lead">
+                    Art Lead
+                </option>
+
+            </select>
+
+
+            <label>
+                Review Type
+            </label>
+
+            <select
+                id="reviewType"
+                required
+            >
+
+                <option value="Internal">
+                    Internal
+                </option>
+
+                <option value="Client">
+                    Client
+                </option>
+
+            </select>
+
+
+            <label>
+                Priority
+            </label>
+
+            <select id="reviewPriority">
+
+                <option value="Low">
+                    Low
+                </option>
+
+                <option value="Medium" selected>
+                    Medium
+                </option>
+
+                <option value="High">
+                    High
+                </option>
+
+            </select>
+
+
+            <label>
+                Feedback
+            </label>
+
+            <textarea
+                id="reviewFeedback"
+                placeholder="Enter review instructions or feedback..."
+            ></textarea>
+
+
+            <div class="form-actions">
+
+                <button
+                    type="button"
+                    id="cancelBtn"
+                    class="secondary-btn"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                >
+                    Create Review
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="reviews.js"></script>
+
+</body>
+
+</html>

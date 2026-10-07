@@ -1,0 +1,210 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f3ff;
+    color: #25213a;
+}
+
+.login-page {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 460px;
+    background: white;
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow:
+        0 15px 45px rgba(55, 40, 100, 0.12);
+}
+
+.brand {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.brand img {
+    width: 170px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+
+    /* IMAGE LANG ANG GUMAGALAW */
+    transform: translate(-10px, 20px);
+}
+h1 {
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 8px;
+}
+
+.muted {
+    color: #777;
+
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+
+    font-weight: bold;
+
+    margin-top: 16px;
+
+    margin-bottom: 7px;
+}
+
+input,
+select {
+
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #ddd8eb;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    background: white;
+}
+
+input:focus,
+select:focus {
+
+    outline: 2px solid #cfc2ff;
+
+    border-color: #7657ef;
+}
+
+button {
+
+    width: 100%;
+
+    margin-top: 22px;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #6c4ee8;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+button:hover {
+
+    background: #583bd0;
+}
+
+.message {
+
+    text-align: center;
+
+    margin-top: 12px;
+
+    color: #d33;
+}
+
+.switch {
+
+    text-align: center;
+
+    margin-top: 20px;
+
+    font-size: 14px;
+}
+
+.switch a {
+
+    color: #6c4ee8;
+
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+.back {
+
+    display: inline-block;
+
+    color: #6c4ee8;
+
+    text-decoration: none;
+
+    margin-bottom: 20px;
+}
+
+
+/* ROLE SELECTION */
+
+.role-choice {
+
+    display: grid;
+
+    gap: 12px;
+}
+
+.choice {
+
+    display: grid;
+
+    grid-template-columns: 50px 1fr;
+
+    gap: 12px;
+
+    padding: 18px;
+
+    border: 1px solid #e2dff0;
+
+    border-radius: 14px;
+
+    text-decoration: none;
+
+    color: #25213a;
+}
+
+.choice:hover {
+
+    border-color: #7657ef;
+
+    background: #faf8ff;
+}
+
+.choice span {
+
+    font-size: 28px;
+}
+
+.choice b {
+
+    display: block;
+
+    margin-bottom: 5px;
+}
+
+.choice small {
+
+    color: #777;
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CROYOLA | User Login</title>
+
+    <link rel="stylesheet" href="login-user.css">
+
+</head>
+
+<body>
+
+    <main class="login-page">
+
+        <div class="login-card">
+
+            <a href="index.html" class="back">
+                ← Back
+            </a>
+
+            <div class="brand">
+            <img src="logo (2).png">
+            </div>
+
+            <h1>User Login</h1>
+
+            <p class="muted">
+                Access your multimedia production workspace.
+            </p>
+
+            <form id="userLoginForm">
+
+                <label for="userEmail">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="userEmail"
+                    placeholder="name@example.com"
+                    required
+                >
+
+                <label for="userPassword">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="userPassword"
+                    placeholder="Enter password"
+                    required
+                >
+
+                <label for="userRole">
+                    Select Role
+                </label>
+
+                <select id="userRole" required>
+
+                    <option value="">
+                        Select your role
+                    </option>
+
+                    <option value="client">
+                        Client
+                    </option>
+
+                    <option value="artist">
+                        Artist
+                    </option>
+
+                    <option value="scriptwriter">
+                        Scriptwriter
+                    </option>
+
+                    <option value="animator">
+                        Animator
+                    </option>
+
+                </select>
+
+                <button type="submit">
+                    Log In
+                </button>
+
+                <p
+                    id="loginMessage"
+                    class="message"
+                ></p>
+
+            </form>
+
+            <p class="switch">
+
+                Don't have an account?
+
+                <a href="signup-user.html">
+                    Create Account
+                </a>
+
+            </p>
+
+        </div>
+
+    </main>
+
+    <script src="login-user.js"></script>
+
+</body>
+
+</html>

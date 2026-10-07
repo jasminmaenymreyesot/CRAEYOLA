@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CROYOLA | My Tasks</title>
+
+    <link rel="stylesheet" href="user-tasks.css">
+
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-brand">
+            <img src="creoyola.png" alt="CROYOLA">
+        </div>
+
+        <p class="menu-title">WORKSPACE</p>
+
+        <nav>
+
+            <a href="user-dashboard.html">
+                <span>▣</span>
+                Dashboard
+            </a>
+
+            <a href="user-projects.html">
+                <span>📁</span>
+                My Projects
+            </a>
+
+            <a href="user-tasks.html" class="active">
+                <span>✓</span>
+                My Tasks
+            </a>
+
+            <a href="user-assets.html">
+                <span>🎨</span>
+                My Assets
+            </a>
+
+            <a href="user-versions.html">
+                <span>🔄</span>
+                Versions
+            </a>
+
+            <a href="user-reviews.html">
+                <span>💬</span>
+                Reviews
+            </a>
+
+            <a href="user-forms.html">
+                <span>📄</span>
+                Forms
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <button id="logoutBtn" class="logout">
+                ↪ Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="main">
+
+        <header class="topbar">
+
+            <div>
+
+                <h2>My Tasks</h2>
+
+                <p>
+                    Track your assigned production tasks.
+                </p>
+
+            </div>
+
+            <div class="profile">
+
+                <div>
+
+                    <strong id="userName">
+                        User
+                    </strong>
+
+                    <small id="userRole">
+                        Creative Member
+                    </small>
+
+                </div>
+
+                <div class="avatar" id="userAvatar">
+                    U
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <section class="content">
+
+            <!-- PAGE HEADER -->
+
+            <div class="page-header">
+
+                <div>
+
+                    <span class="page-label">
+                        TASK WORKSPACE
+                    </span>
+
+                    <h1>My Tasks</h1>
+
+                    <p>
+                        View, update and manage the tasks
+                        assigned to you.
+                    </p>
+
+                </div>
+
+                <button
+                    class="primary-btn"
+                    id="addTaskBtn">
+
+                    + Add Task
+
+                </button>
+
+            </div>
+
+
+            <!-- STATS -->
+
+            <div class="stats">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        📋
+                    </div>
+
+                    <div>
+                        <span>Total Tasks</span>
+                        <strong>8</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        ◔
+                    </div>
+
+                    <div>
+                        <span>In Progress</span>
+                        <strong>4</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        ✓
+                    </div>
+
+                    <div>
+                        <span>Completed</span>
+                        <strong>3</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        !
+                    </div>
+
+                    <div>
+                        <span>Pending</span>
+                        <strong>1</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FILTER -->
+
+            <div class="filter-panel">
+
+                <button
+                    class="filter-btn active"
+                    data-filter="all">
+
+                    All
+
+                </button>
+
+                <button
+                    class="filter-btn"
+                    data-filter="todo">
+
+                    To Do
+
+                </button>
+
+                <button
+                    class="filter-btn"
+                    data-filter="progress">
+
+                    In Progress
+
+                </button>
+
+                <button
+                    class="filter-btn"
+                    data-filter="done">
+
+                    Completed
+
+                </button>
+
+            </div>
+
+
+            <!-- TASK TABLE -->
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h3>Assigned Tasks</h3>
+
+                        <p>
+                            Tasks currently assigned to you.
+                        </p>
+
+                    </div>
+
+                    <button
+                        class="text-btn"
+                        id="refreshTasks">
+
+                        Refresh
+
+                    </button>
+
+                </div>
+
+
+                <div class="task-table">
+
+                    <!-- TASK -->
+
+                    <div
+                        class="task-row"
+                        data-status="progress">
+
+                        <div class="task-main">
+
+                            <div class="task-icon">
+                                🎬
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Storyboard Preparation
+                                </strong>
+
+                                <span>
+                                    Beyond the File
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <div>
+                            <span class="priority high">
+                                High
+                            </span>
+                        </div>
+
+                        <div class="due-date">
+                            Oct 10, 2026
+                        </div>
+
+                        <span class="task-status progress">
+                            In Progress
+                        </span>
+
+                        <button
+                            class="task-btn"
+                            data-task="Storyboard Preparation">
+
+                            View
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- TASK -->
+
+                    <div
+                        class="task-row"
+                        data-status="todo">
+
+                        <div class="task-main">
+
+                            <div class="task-icon">
+                                🎨
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Character Design
+                                </strong>
+
+                                <span>
+                                    CROYOLA Promotional Video
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <div>
+                            <span class="priority medium">
+                                Medium
+                            </span>
+                        </div>
+
+                        <div class="due-date">
+                            Oct 12, 2026
+                        </div>
+
+                        <span class="task-status todo">
+                            To Do
+                        </span>
+
+                        <button
+                            class="task-btn"
+                            data-task="Character Design">
+
+                            View
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- TASK -->
+
+                    <div
+                        class="task-row"
+                        data-status="done">
+
+                        <div class="task-main">
+
+                            <div class="task-icon">
+                                🖼️
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Asset Organization
+                                </strong>
+
+                                <span>
+                                    Brand Visual Assets
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <div>
+                            <span class="priority low">
+                                Low
+                            </span>
+                        </div>
+
+                        <div class="due-date">
+                            Oct 05, 2026
+                        </div>
+
+                        <span class="task-status done">
+                            Completed
+                        </span>
+
+                        <button
+                            class="task-btn"
+                            data-task="Asset Organization">
+
+                            View
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- TASK -->
+
+                    <div
+                        class="task-row"
+                        data-status="progress">
+
+                        <div class="task-main">
+
+                            <div class="task-icon">
+                                🎞️
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Animation Scene 01
+                                </strong>
+
+                                <span>
+                                    Beyond the File
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <div>
+                            <span class="priority high">
+                                High
+                            </span>
+                        </div>
+
+                        <div class="due-date">
+                            Oct 15, 2026
+                        </div>
+
+                        <span class="task-status progress">
+                            In Progress
+                        </span>
+
+                        <button
+                            class="task-btn"
+                            data-task="Animation Scene 01">
+
+                            View
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- TASK MODAL -->
+
+<div class="modal" id="taskModal">
+
+    <div class="modal-box">
+
+        <button
+            class="close-btn"
+            id="closeModal">
+
+            ×
+
+        </button>
+
+        <h2 id="modalTaskTitle">
+            Task Details
+        </h2>
+
+        <p>
+            Review the task information below.
+        </p>
+
+        <div class="modal-info">
+
+            <div>
+                <span>Task</span>
+                <strong id="modalTaskName">
+                    -
+                </strong>
+            </div>
+
+            <div>
+                <span>Project</span>
+                <strong id="modalProject">
+                    Multimedia Project
+                </strong>
+            </div>
+
+            <div>
+                <span>Status</span>
+                <strong id="modalTaskStatus">
+                    In Progress
+                </strong>
+            </div>
+
+        </div>
+
+        <div class="modal-actions">
+
+            <button
+                class="primary-btn"
+                id="updateTaskBtn">
+
+                Update Status
+
+            </button>
+
+            <button
+                class="secondary-btn"
+                id="closeModal2">
+
+                Close
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="user-tasks.js"></script>
+
+</body>
+</html>

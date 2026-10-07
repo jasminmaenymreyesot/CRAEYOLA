@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CROYOLA | Versions</title>
+
+    <link rel="stylesheet" href="versions.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+         <div class="sidebar-brand">
+            <img src="creoyola.png">
+        </div>
+
+        <div class="role-label">
+            PROJECT MANAGER
+        </div>
+
+        <nav>
+
+            <a href="admin-dashboard.html">
+                <span>▣</span>
+                Dashboard
+            </a>
+
+            <a href="project.html">
+                <span>◫</span>
+                Projects
+            </a>
+
+            <a href="tasks.html">
+                <span>✓</span>
+                Tasks
+            </a>
+
+            <a href="assets.html">
+                <span>◈</span>
+                Assets
+            </a>
+
+            <a href="version.html" class="active">
+                <span>↻</span>
+                Versions
+            </a>
+
+            <a href="reviews.html">
+                <span>★</span>
+                Reviews
+            </a>
+
+            <a href="forms.html" >
+                <span>▤</span>
+                Forms
+            </a>
+
+        </nav>
+
+
+        <button
+            id="logoutBtn"
+            class="logout"
+        >
+            Logout
+        </button>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="main">
+
+
+        <!-- =================================================
+             TOPBAR
+        ================================================== -->
+
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <div>
+
+                    <h1>
+                        Versions
+                    </h1>
+
+                    <p>
+                        Manage and monitor project versions
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <div class="profile">
+
+                    <div class="profile-avatar">
+                        PM
+                    </div>
+
+
+                    <div class="profile-info">
+
+                        <strong>
+                            Project Manager
+                        </strong>
+
+                        <span>
+                            Administrator
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             CONTENT
+        ================================================== -->
+
+        <section class="content">
+
+
+            <!-- PAGE HEADER -->
+
+            <div class="page-header">
+
+                <div>
+
+                    <h2>
+                        Project Versions
+                    </h2>
+
+                    <p>
+                        Review, track, and manage submitted project versions.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="primary-btn"
+                    id="newVersionBtn"
+                >
+
+                    + New Version
+
+                </button>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 STATISTICS
+            ================================================== -->
+
+            <div class="stats-grid">
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon purple">
+                        ◫
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Versions
+                        </span>
+
+                        <strong id="totalVersions">
+                            4
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon orange">
+                        ◷
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Pending Review
+                        </span>
+
+                        <strong id="pendingVersions">
+                            1
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon green">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Approved
+                        </span>
+
+                        <strong id="approvedVersions">
+                            2
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon red">
+                        !
+                    </div>
+
+                    <div>
+
+                        <span>
+                            For Revision
+                        </span>
+
+                        <strong id="revisionVersions">
+                            1
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 VERSION TABLE CARD
+            ================================================== -->
+
+            <div class="content-card">
+
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>
+                            Submitted Versions
+                        </h3>
+
+                        <p>
+                            Latest project version submissions
+                        </p>
+
+                    </div>
+
+
+                    <div class="search-wrapper">
+
+                        <input
+                            type="text"
+                            id="versionSearch"
+                            placeholder="Search versions..."
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    VERSION
+                                </th>
+
+                                <th>
+                                    PROJECT
+                                </th>
+
+                                <th>
+                                    SUBMITTED BY
+                                </th>
+
+                                <th>
+                                    DATE
+                                </th>
+
+                                <th>
+                                    STATUS
+                                </th>
+
+                                <th>
+                                    ACTION
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="versionsTable">
+
+
+                            <!-- VERSION 1 -->
+
+                            <tr
+                                data-version="v1.0"
+                                data-project="Branding Project"
+                                data-member="Jasmin Afos"
+                                data-date="October 5, 2026"
+                                data-status="Pending Review"
+                                data-description="Initial project submission for review."
+                            >
+
+                                <td>
+
+                                    <div class="version-cell">
+
+                                        <div class="version-badge">
+                                            V1
+                                        </div>
+
+                                        <div>
+
+                                            <strong>
+                                                v1.0
+                                            </strong>
+
+                                            <small>
+                                                Initial Submission
+                                            </small>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+                                    Branding Project
+                                </td>
+
+
+                                <td>
+                                    Jasmin Afos
+                                </td>
+
+
+                                <td>
+                                    October 5, 2026
+                                </td>
+
+
+                                <td>
+
+                                    <span class="status pending">
+                                        Pending Review
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <button
+                                        type="button"
+                                        class="table-btn view-btn"
+                                    >
+                                        View
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+
+                            <!-- VERSION 2 -->
+
+                            <tr
+                                data-version="v2.1"
+                                data-project="Marketing Campaign"
+                                data-member="Maria Cruz"
+                                data-date="October 4, 2026"
+                                data-status="Approved"
+                                data-description="Final marketing campaign design."
+                            >
+
+                                <td>
+
+                                    <div class="version-cell">
+
+                                        <div class="version-badge">
+                                            V2
+                                        </div>
+
+                                        <div>
+
+                                            <strong>
+                                                v2.1
+                                            </strong>
+
+                                            <small>
+                                                Final Design
+                                            </small>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+                                    Marketing Campaign
+                                </td>
+
+
+                                <td>
+                                    Maria Cruz
+                                </td>
+
+
+                                <td>
+                                    October 4, 2026
+                                </td>
+
+
+                                <td>
+
+                                    <span class="status approved">
+                                        Approved
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <button
+                                        type="button"
+                                        class="table-btn view-btn"
+                                    >
+                                        View
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+
+                            <!-- VERSION 3 -->
+
+                            <tr
+                                data-version="v1.3"
+                                data-project="Animation Short Film"
+                                data-member="Alex Reyes"
+                                data-date="October 3, 2026"
+                                data-status="Revision Required"
+                                data-description="Updated animation requiring additional revisions."
+                            >
+
+                                <td>
+
+                                    <div class="version-cell">
+
+                                        <div class="version-badge">
+                                            V1
+                                        </div>
+
+                                        <div>
+
+                                            <strong>
+                                                v1.3
+                                            </strong>
+
+                                            <small>
+                                                Animation Update
+                                            </small>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+                                    Animation Short Film
+                                </td>
+
+
+                                <td>
+                                    Alex Reyes
+                                </td>
+
+
+                                <td>
+                                    October 3, 2026
+                                </td>
+
+
+                                <td>
+
+                                    <span class="status revision">
+                                        Revision Required
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <button
+                                        type="button"
+                                        class="table-btn view-btn"
+                                    >
+                                        View
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+
+                            <!-- VERSION 4 -->
+
+                            <tr
+                                data-version="v3.0"
+                                data-project="Product Advertisement"
+                                data-member="Kim Santos"
+                                data-date="October 2, 2026"
+                                data-status="Approved"
+                                data-description="Final product advertisement output."
+                            >
+
+                                <td>
+
+                                    <div class="version-cell">
+
+                                        <div class="version-badge">
+                                            V3
+                                        </div>
+
+                                        <div>
+
+                                            <strong>
+                                                v3.0
+                                            </strong>
+
+                                            <small>
+                                                Final Output
+                                            </small>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+                                    Product Advertisement
+                                </td>
+
+
+                                <td>
+                                    Kim Santos
+                                </td>
+
+
+                                <td>
+                                    October 2, 2026
+                                </td>
+
+
+                                <td>
+
+                                    <span class="status approved">
+                                        Approved
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <button
+                                        type="button"
+                                        class="table-btn view-btn"
+                                    >
+                                        View
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 VERSION DETAILS
+            ================================================== -->
+
+            <div
+                class="content-card details-card"
+                id="detailsCard"
+            >
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>
+                            Version Management
+                        </h3>
+
+                        <p>
+                            Select a version to review its details.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="details-empty"
+                    id="detailsEmpty"
+                >
+
+                    <div class="empty-icon">
+                        ◫
+                    </div>
+
+                    <h4>
+                        No Version Selected
+                    </h4>
+
+                    <p>
+                        Choose a version above to view its details.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="version-details"
+                    id="versionDetails"
+                    hidden
+                >
+
+                    <div class="detail-grid">
+
+                        <div>
+
+                            <span>
+                                Version
+                            </span>
+
+                            <strong id="detailVersion">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Project
+                            </span>
+
+                            <strong id="detailProject">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Submitted By
+                            </span>
+
+                            <strong id="detailMember">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Date
+                            </span>
+
+                            <strong id="detailDate">
+                                -
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-description">
+
+                        <span>
+                            Description
+                        </span>
+
+                        <p id="detailDescription">
+                            -
+                        </p>
+
+                    </div>
+
+
+                    <div class="detail-actions">
+
+                        <button
+                            type="button"
+                            class="approve-btn"
+                            id="approveBtn"
+                        >
+                            Approve
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="revision-btn"
+                            id="revisionBtn"
+                        >
+                            Request Revision
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         NEW VERSION MODAL
+    ====================================================== -->
+
+    <div
+        class="modal"
+        id="versionModal"
+    >
+
+        <div class="modal-box">
+
+
+            <div class="modal-header">
+
+                <div>
+
+                    <h3>
+                        Create New Version
+                    </h3>
+
+                    <p>
+                        Add a new project version submission.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="close-btn"
+                    id="closeModal"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <form id="versionForm">
+
+
+                <div class="form-group">
+
+                    <label for="projectName">
+                        Project Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="projectName"
+                        placeholder="Enter project name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="versionNumber">
+                            Version
+                        </label>
+
+                        <input
+                            type="text"
+                            id="versionNumber"
+                            placeholder="e.g. v1.0"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="submittedBy">
+                            Submitted By
+                        </label>
+
+                        <input
+                            type="text"
+                            id="submittedBy"
+                            placeholder="Member name"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="versionDescription">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="versionDescription"
+                        rows="4"
+                        placeholder="Enter version description"
+                    ></textarea>
+
+                </div>
+
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        class="cancel-btn"
+                        id="cancelModal"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="primary-btn"
+                    >
+                        Create Version
+                    </button>
+
+                </div>
+
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="versions.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,386 @@
+/* =========================================
+   CROYOLA ADMIN SIGN UP
+   ========================================= */
+
+
+/* =========================================
+   RESET
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   BODY
+   ========================================= */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #f5f6fa;
+
+    color: #222;
+
+    min-height: 100vh;
+}
+
+
+/* =========================================
+   SIGN UP PAGE
+   ========================================= */
+
+.signup-page {
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f7f7fb,
+            #eeeeff
+        );
+}
+
+
+/* =========================================
+   SIGN UP CARD
+   ========================================= */
+
+.signup-card {
+    width: 100%;
+
+    max-width: 500px;
+
+    background: #ffffff;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================
+   BRAND / LOGO
+   ========================================= */
+
+.brand {
+    width: 100%;
+
+    text-align: center;
+
+    margin-bottom: 20px;
+}
+
+
+
+.brand img {
+    width: 170px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    transform: translate(0px, 0px);
+}
+
+
+
+.signup-card h1 {
+    text-align: center;
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+
+    margin-bottom: 8px;
+
+    color: #222;
+}
+
+
+/* =========================================
+   MUTED TEXT
+   ========================================= */
+
+.muted {
+    text-align: center;
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   FORM GROUP
+   ========================================= */
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+
+/* =========================================
+   LABEL
+   ========================================= */
+
+.form-group label {
+    display: block;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-bottom: 7px;
+
+    color: #333;
+}
+
+
+/* =========================================
+   INPUT
+   ========================================= */
+
+.form-group input {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid #dcdcdc;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    font-size: 14px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #ffffff;
+
+    color: #222;
+
+    transition: 0.2s;
+}
+
+
+/* =========================================
+   INPUT FOCUS
+   ========================================= */
+
+.form-group input:focus {
+    border-color: #6c63ff;
+
+    box-shadow:
+        0 0 0 3px rgba(
+            108,
+            99,
+            255,
+            0.10
+        );
+}
+
+
+/* =========================================
+   PLACEHOLDER
+   ========================================= */
+
+.form-group input::placeholder {
+    color: #aaa;
+}
+
+
+/* =========================================
+   SIGN UP MESSAGE
+   ========================================= */
+
+.signup-message {
+    text-align: center;
+
+    font-size: 13px;
+
+    min-height: 18px;
+
+    margin-bottom: 10px;
+
+    color: #d9534f;
+}
+
+
+/* =========================================
+   SIGN UP BUTTON
+   ========================================= */
+
+.signup-button {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #6c63ff;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.1s ease;
+}
+
+
+/* =========================================
+   BUTTON HOVER
+   ========================================= */
+
+.signup-button:hover {
+    background: #574fd6;
+}
+
+
+/* =========================================
+   BUTTON ACTIVE
+   ========================================= */
+
+.signup-button:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================================
+   LOGIN TEXT
+   ========================================= */
+
+.login-text {
+    text-align: center;
+
+    margin-top: 22px;
+
+    color: #777;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   LOGIN LINK
+   ========================================= */
+
+.login-text a {
+    color: #6c63ff;
+
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+
+/* =========================================
+   LOGIN LINK HOVER
+   ========================================= */
+
+.login-text a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   BACK LINK
+   ========================================= */
+
+.back-link {
+    display: block;
+
+    text-align: center;
+
+    margin-top: 18px;
+
+    color: #777;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    transition: 0.2s;
+}
+
+
+/* =========================================
+   BACK LINK HOVER
+   ========================================= */
+
+.back-link:hover {
+    color: #6c63ff;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    .signup-page {
+        padding: 20px;
+    }
+
+
+    .signup-card {
+        padding: 30px 22px;
+
+        border-radius: 16px;
+    }
+
+
+    .brand {
+        margin-bottom: 18px;
+    }
+
+
+    .brand img {
+        width: 140px;
+    }
+
+
+    .signup-card h1 {
+        font-size: 21px;
+    }
+
+
+    .muted {
+        font-size: 13px;
+
+        margin-bottom: 25px;
+    }
+
+
+    .form-group input {
+        padding: 12px;
+    }
+
+
+    .signup-button {
+        padding: 13px;
+    }
+
+}

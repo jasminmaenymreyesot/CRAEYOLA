@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f3ff;
+    color: #25213a;
+}
+
+.signup-page {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+}
+
+.signup-card {
+    width: 100%;
+    max-width: 460px;
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 15px 45px rgba(55, 40, 100, .12);
+}
+
+.brand {
+    font-size: 25px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: #6c4ee8;
+
+    margin-bottom: 20px;
+}
+
+.brand img {
+    width: 170px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    transform: translate(0px, 0px);
+}
+
+h1 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.muted {
+    color: #777;
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+
+    font-weight: bold;
+
+    margin-top: 15px;
+    margin-bottom: 7px;
+}
+
+input,
+select {
+
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #ddd8eb;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+}
+
+input:focus,
+select:focus {
+
+    outline: 2px solid #cfc2ff;
+}
+
+button {
+
+    width: 100%;
+
+    margin-top: 22px;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #6c4ee8;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background: #583bd0;
+}
+
+.back {
+
+    color: #6c4ee8;
+
+    text-decoration: none;
+
+    display: inline-block;
+
+    margin-bottom: 20px;
+}
+
+.message {
+
+    text-align: center;
+
+    margin-top: 12px;
+
+    color: #d33;
+}

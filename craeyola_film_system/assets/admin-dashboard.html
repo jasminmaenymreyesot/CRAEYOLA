@@ -1,0 +1,539 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CROYOLA | Project Manager Dashboard</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="admin-dashboard.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar">
+
+        <div class="sidebar-brand">
+            <img src="creoyola.png">
+        </div>
+
+        <div class="role-label">
+            PROJECT MANAGER
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="admin-dashboard.html" class="nav-item active">
+                <span>▣</span>
+                Dashboard
+            </a>
+
+            <a href="project.html" class="nav-item">
+                <span>▦</span>
+                Projects
+            </a>
+
+            <a href="tasks.html" class="nav-item">
+                <span>✓</span>
+                Tasks
+            </a>
+
+            <a href="assets.html" class="nav-item">
+                <span>◆</span>
+                Assets
+            </a>
+
+            <a href="version.html" class="nav-item">
+                <span>↻</span>
+                Versions
+            </a>
+
+            <a href="reviews.html" class="nav-item">
+                <span>◉</span>
+                Reviews
+            </a>
+
+            <a href="forms.html" class="nav-item">
+                <span>□</span>
+                Forms
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+            <button id="logoutButton" class="logout-button">
+                ↪ Logout
+            </button>
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+
+            <div>
+                <p class="page-label">
+                    PROJECT MANAGEMENT
+                </p>
+
+                <h1>
+                    Dashboard
+                </h1>
+            </div>
+
+            <div class="profile">
+
+                <div class="profile-avatar">
+                    PM
+                </div>
+
+                <div class="profile-info">
+                    <strong id="adminName">
+                        Project Manager
+                    </strong>
+
+                    <small>
+                        Administrator
+                    </small>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= WELCOME ================= -->
+        <section class="welcome-section">
+
+            <div>
+                <h2>
+                    Welcome,
+                    <span id="welcomeName">
+                        Project Manager
+                    </span>!
+                </h2>
+
+                <p>
+                    Monitor your multimedia projects and production pipeline.
+                </p>
+            </div>
+
+            <a href="project.html" class="primary-button">
+                + New Project
+            </a>
+
+        </section>
+
+
+        <!-- ================= STATISTICS ================= -->
+        <section class="stats-grid">
+
+            <div class="stat-card">
+
+                <div class="stat-icon purple">
+                    ▦
+                </div>
+
+                <div>
+                    <p>
+                        Active Projects
+                    </p>
+
+                    <h2 id="projectCount">
+                        3
+                    </h2>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">
+                    ✓
+                </div>
+
+                <div>
+                    <p>
+                        Open Tasks
+                    </p>
+
+                    <h2 id="taskCount">
+                        12
+                    </h2>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">
+                    ◆
+                </div>
+
+                <div>
+                    <p>
+                        Assets
+                    </p>
+
+                    <h2 id="assetCount">
+                        24
+                    </h2>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon orange">
+                    ◉
+                </div>
+
+                <div>
+                    <p>
+                        Pending Reviews
+                    </p>
+
+                    <h2 id="reviewCount">
+                        5
+                    </h2>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PROJECTS + PIPELINE ================= -->
+        <section class="dashboard-grid">
+
+            <!-- RECENT PROJECTS -->
+            <div class="panel projects-panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h2>
+                            Recent Projects
+                        </h2>
+
+                        <p>
+                            Current production projects
+                        </p>
+                    </div>
+
+                    <a href="project.html">
+                        View All
+                    </a>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Project</th>
+                                <th>Client</th>
+                                <th>Status</th>
+                                <th>Progress</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="projectTable">
+
+                            <tr>
+
+                                <td>
+                                    Hide and Seek
+                                </td>
+
+                                <td>
+                                    CROYOLA Client
+                                </td>
+
+                                <td>
+                                    <span class="badge production">
+                                        In Production
+                                    </span>
+                                </td>
+
+                                <td>
+
+                                    <div class="progress-wrapper">
+
+                                        <div class="progress-bar">
+
+                                            <div
+                                                class="progress-fill"
+                                                style="width: 72%;">
+                                            </div>
+
+                                        </div>
+
+                                        <span>
+                                            72%
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    Beyond the File
+                                </td>
+
+                                <td>
+                                    NU Manila
+                                </td>
+
+                                <td>
+                                    <span class="badge preproduction">
+                                        Pre-Production
+                                    </span>
+                                </td>
+
+                                <td>
+
+                                    <div class="progress-wrapper">
+
+                                        <div class="progress-bar">
+
+                                            <div
+                                                class="progress-fill"
+                                                style="width: 35%;">
+                                            </div>
+
+                                        </div>
+
+                                        <span>
+                                            35%
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    CampusBite
+                                </td>
+
+                                <td>
+                                    Student Project
+                                </td>
+
+                                <td>
+                                    <span class="badge review">
+                                        Review
+                                    </span>
+                                </td>
+
+                                <td>
+
+                                    <div class="progress-wrapper">
+
+                                        <div class="progress-bar">
+
+                                            <div
+                                                class="progress-fill"
+                                                style="width: 88%;">
+                                            </div>
+
+                                        </div>
+
+                                        <span>
+                                            88%
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCTION PIPELINE -->
+            <div class="panel pipeline-panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h2>
+                            Production Pipeline
+                        </h2>
+
+                        <p>
+                            Current workflow
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="pipeline">
+
+                    <div class="pipeline-step">
+
+                        <div class="pipeline-number">
+                            01
+                        </div>
+
+                        <div>
+                            <strong>
+                                Plan
+                            </strong>
+
+                            <small>
+                                Projects & Forms
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="pipeline-line"></div>
+
+
+                    <div class="pipeline-step">
+
+                        <div class="pipeline-number">
+                            02
+                        </div>
+
+                        <div>
+                            <strong>
+                                Produce
+                            </strong>
+
+                            <small>
+                                Tasks & Assets
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="pipeline-line"></div>
+
+
+                    <div class="pipeline-step">
+
+                        <div class="pipeline-number">
+                            03
+                        </div>
+
+                        <div>
+                            <strong>
+                                Review
+                            </strong>
+
+                            <small>
+                                Feedback & Versions
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="pipeline-line"></div>
+
+
+                    <div class="pipeline-step">
+
+                        <div class="pipeline-number">
+                            04
+                        </div>
+
+                        <div>
+                            <strong>
+                                Approve
+                            </strong>
+
+                            <small>
+                                Final Approval
+                            </small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= BOTTOM ================= -->
+        <section class="bottom-grid">
+
+
+            <!-- PRIORITY TASKS -->
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h2>
+                            Priority Tasks
+                        </h2>
+
+                        <p>
+                            Tasks requiring attention
+                        </p>
+
+                    </div>
+
+                    <a href="tasks.html">
+                        View All
+                    </a>
+
+                </div>
+
+
+                <div class="task-list">
+
+                    <div class="task-item">
+
+                        <div class="task-info">
+
+                            <strong>
+                                Finalize storyboard
+                            </strong>
+
+                            <small>
+```

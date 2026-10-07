@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    background: #ebeaf1;
+
+    color: white;
+}
+
+.login-page {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 25px;
+}
+
+.login-card {
+    width: 50;
+    height: 600px;
+    background: #211c41;
+    border: 1px solid #d2cee7;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, .3);
+    
+}
+
+.brand {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.brand img {
+    width: 170px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+
+    /* IMAGE LANG ANG GUMAGALAW */
+    transform: translate(-10px, 20px);
+}
+
+
+h1 {
+
+    font-size: 30px;
+
+    margin-bottom: 8px;
+}
+
+.muted {
+
+    color: #c2bdd4;
+
+    margin-bottom: 25px;
+}
+
+label {
+
+    display: block;
+
+    font-weight: bold;
+
+    margin-top: 16px;
+
+    margin-bottom: 7px;
+}
+
+input {
+
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #4a4466;
+
+    border-radius: 10px;
+
+    background: #17142b;
+
+    color: white;
+
+    font-size: 15px;
+}
+
+input:focus {
+
+    outline: 2px solid #8f7cff;
+}
+
+button {
+
+    width: 100%;
+
+    margin-top: 22px;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #8a72ff;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+button:hover {
+
+    background: #7058e8;
+}
+
+.back {
+
+    display: inline-block;
+
+    color: #a894ff;
+
+    text-decoration: none;
+
+    margin-bottom: 20px;
+}
+
+.message {
+
+    text-align: center;
+
+    margin-top: 12px;
+
+    color: #ff9b9b;
+}
